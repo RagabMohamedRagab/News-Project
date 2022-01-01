@@ -1,0 +1,58 @@
+
+
+
+
+hr {
+    width: 5%;
+    color: red;
+    border: 5px solid #0f36df;
+    margin: 0% 0% 4% 0%;
+}
+.head {
+    font-weight: bold;
+    margin: 0% 0% 4% 0%;
+    color: #3fbbc0 !important;
+}
+.myname {
+    color: #0268be !important;
+}
+.home_p{
+    font-size:medium
+}
+.icon-box .details{
+  border-radius:4px;
+ 
+}
+.head-logo {
+    text-align: center;
+    margin: 2% 0% 5%;
+    color: #0268be;
+    font-size: 60px;
+}
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 825px;
+}
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 500px;
+    width: 825px;
+}
+.Modified {
+    display: flex;
+    flex-direction:column;
+}
+.valid {
+    color: #d71010;
+    margin-top: 0.6rem;
+}
+@media screen and (max-width:768px){
+    .Mood{
+        margin-top:10%;
+    }
+}
+
+

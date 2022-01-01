@@ -1,0 +1,46 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Category";
+}
+<section id="featured-services" class="featured-services">
+    <div class="container" style="cursor:pointer" data-aos="fade-up">
+        <div class="row">
+            <div class="col head-logo">Service</div>
+        </div>
+
+        <div class="row">
+            @foreach (Category category in Model)
+            {
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box"  data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-file-alt"></i></div>
+                        <h4 class="title"><a href="">@category.Name</a></h4>
+                        <p class="description">@category.Description</p>
+                        <div class="row my-3">
+                            <div class="col">  <a class="btn btn-primary details">Details</a></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
