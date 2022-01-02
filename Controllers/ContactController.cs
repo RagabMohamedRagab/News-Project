@@ -17,8 +17,7 @@ namespace Project_n9ws.Controllers
             _contact = contact;
         }
 
-        [HttpGet]
-        // Get : Contact/Contactus
+        [HttpGet] // Get : Contact/Contactus
         public IActionResult Contactus()
         {
             return View();
