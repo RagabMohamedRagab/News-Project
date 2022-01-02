@@ -25,23 +25,19 @@ namespace Project_n9ws.Controllers
         }
         [HttpPost] // Post : Contact/Contactus 
         [ValidateAntiForgeryToken]
-        public IActionResult Contactus([FromForm]ContactUs contactUs)
+        public IActionResult Contactus([FromForm] ContactUs contactUs)
         {
             if (ModelState.IsValid)
             {
-                if (_contact.Create(contactUs).Result > 0)
-                {
-                    ModelState.Clear();
-                    return View();
-                }
+                _contact.Create(contactUs);
+                ModelState.Clear();
+                return View();
             }
-            else
-            {
-                return View(contactUs);
-            }
-            return NotFound();
+
+            return View(contactUs);
         }
-       
+
+
 
 
 

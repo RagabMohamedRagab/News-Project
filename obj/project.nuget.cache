@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mrR9Vyh1QpI3uzdhQ8ZJdoF0sPj1EuIFz2stkIUGnrby+lqxiXukDkIxlcadUpjPjbOGQAeXx07ODtzJl8ZR4w==",
+  "dgSpecHash": "Q5o36CeA5QWuvzjadP1PR0Uw2McRgW7CA1BGTPYpsFmJAcuk0rcbzZdZSrBHK3Czq56AJTLgyj7qM2j47urAQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pc\\Desktop\\ToProject\\News-Project\\Project n9ws.csproj",
+  "projectFilePath": "C:\\Users\\pc\\Desktop\\New folder (17)\\News-Project\\Project n9ws.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

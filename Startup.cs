@@ -39,7 +39,6 @@ namespace Project_n9ws
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
             }
             else
             {
