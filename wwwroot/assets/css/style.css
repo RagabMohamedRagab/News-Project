@@ -346,8 +346,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #555555;
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #3fbbc0;
-}
+        color: #0268be;
+ }
 .navbar-mobile .dropdown ul {
   position: static;
   display: none;
@@ -400,14 +400,14 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: flex-end;
 }
-#hero .container {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.9);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 70px;
-  border-top: 4px solid #3fbbc0;
-}
+    #hero .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 70px;
+        border-top: 4px solid #0268be;
+    }
 @media (max-width: 1200px) {
   #hero .container {
     margin-left: 50px;
@@ -423,7 +423,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero p {
     margin: 0 auto 30px auto;
     color: #555555;
-    font-size: x-large;
+   
 }
 #hero .carousel-inner .carousel-item {
   transition-property: opacity;
@@ -478,10 +478,10 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.6;
   transition: 0.3s;
 }
-#hero .carousel-indicators li.active {
-  opacity: 1;
-  background: #3fbbc0;
-}
+    #hero .carousel-indicators li.active {
+        opacity: 1;
+        background: #0268be;
+    }
 #hero .btn-get-started {
     font-family: "Roboto", sans-serif;
     font-weight: 500;

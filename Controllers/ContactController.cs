@@ -30,7 +30,7 @@ namespace Project_n9ws.Controllers
             {
                 _contact.Create(contactUs);
                 ModelState.Clear();
-                return View();
+                return RedirectToAction("Index", "New");
             }
 
             return View(contactUs);
