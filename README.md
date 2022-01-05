@@ -60,6 +60,8 @@
     ?</a></li>
      <li><a href="https://dotnettutorials.net/lesson/view-model-asp-net-core-mvc/" title="">what is viewModel
     ?</a></li>
+  <li><a href="https://www.mindstick.com/articles/85566/how-to-use-data-validation-in-mvc-core" title="">Adding Validation 
+    ?</a></li>
  
  
  </ul>
