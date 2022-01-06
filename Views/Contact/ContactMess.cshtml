@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ContactUs>;
+@{
+    ViewData["Title"] = "Feedback";
+}
+<div class="col m-auto" data-aos="fade-up">
+    <div class="section-title">
+        <h2>Feedback</h2>
+    </div>
+    <table class="table table-striped" >
+        <thead class="head-table">
+            <tr class="text-light text-center">
+                <th>@Html.DisplayNameFor(ModelItem => ModelItem.Name)</th>
+                <th>@Html.DisplayNameFor(ModelItem => ModelItem.Email)</th>
+                <th>@Html.DisplayNameFor(ModelItem => ModelItem.Subject)</th>
+                <th>@Html.DisplayNameFor(ModelItem => ModelItem.Message)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ContactUs contact in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => contact.Name)</td>
+                    <td>@Html.DisplayFor(model => contact.Email)</td>
+                    <td>@Html.DisplayFor(model => contact.Subject)</td>
+                    <td>@Html.DisplayFor(model => contact.Message)</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row my-3 d-flex align-content-center flex-wrap" data-aos="fade-up">
+    <div> <a asp-controller="New" asp-action="Index" class="btn btn-primary">Home <i class="fas fa-arrow-circle-right"></i></a></div>
+
+</div>

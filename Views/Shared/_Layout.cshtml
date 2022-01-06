@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>The World News</title>
+    <title>@ViewData["Title"]</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -65,13 +65,13 @@
                     <li><a asp-area="" asp-controller="New" asp-action="Index" class="nav-link scrollto ">Home</a></li>
                     <li><a asp-area="" asp-controller="New" asp-action="About" class="nav-link scrollto">About</a></li>
                     <li><a asp-area="" asp-controller="New" asp-action="Services" class="nav-link scrollto">Services</a></li>
-                    <li><a class="nav-link scrollto" href="">Teammemmber</a></li>
+                    <li><a class="nav-link scrollto" asp-area="" asp-controller="Contact" asp-action="ContactMess">Feedback</a></li>
                     <li><a asp-area="" asp-controller="Contact" asp-action="Contactus" class="nav-link scrollto">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="#appointment" class="appointment-btn scrollto">Appointment</a>
+            <a href="#appointment" class="appointment-btn scrollto">Register</a>
 
         </div>
     </header><!-- End Header -->

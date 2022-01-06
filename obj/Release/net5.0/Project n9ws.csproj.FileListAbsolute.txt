@@ -460,3 +460,4 @@ C:\Users\pc\Desktop\New folder\News-Project\obj\Release\net5.0\Project n9ws.dll
 C:\Users\pc\Desktop\New folder\News-Project\obj\Release\net5.0\ref\Project n9ws.dll
 C:\Users\pc\Desktop\New folder\News-Project\obj\Release\net5.0\Project n9ws.pdb
 C:\Users\pc\Desktop\New folder\News-Project\obj\Release\net5.0\Project n9ws.genruntimeconfig.cache
+C:\Users\pc\Desktop\New folder\News-Project\obj\Release\net5.0\Razor\Views\Contact\ContactMess.cshtml.g.cs

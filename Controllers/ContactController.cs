@@ -35,7 +35,11 @@ namespace Project_n9ws.Controllers
 
             return View(contactUs);
         }
-
+        [HttpGet] // Get : Contact/ContactMess
+        public IActionResult ContactMess()
+        {
+            return View(_contact.GetAll().Result);
+        }
 
 
 

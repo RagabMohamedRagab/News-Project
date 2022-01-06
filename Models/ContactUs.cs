@@ -12,7 +12,7 @@ namespace Project_n9ws.Models
         public int ID { get; set; }
         [Required(ErrorMessage ="Enter Name!!")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Enter Email!!"),RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Enter Subject!!")]
         public string Subject { get; set; }
