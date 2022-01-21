@@ -62,6 +62,8 @@
     ?</a></li>
   <li><a href="https://www.mindstick.com/articles/85566/how-to-use-data-validation-in-mvc-core" title="">Adding Validation 
     ?</a></li>
+    <li><a href=" title="">Adding Data Annotaions in to Entities.
+    ?</a></li>
  
  
  </ul>
