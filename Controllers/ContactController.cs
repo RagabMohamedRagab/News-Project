@@ -16,6 +16,11 @@ namespace Project_n9ws.Controllers
         {
             _contact = contact;
         }
+        [HttpGet] // Get : Contact/ContactMess
+        public IActionResult ContactMess()
+        {
+            return View(_contact.GetAll().Result);
+        }
 
         [HttpGet] // Get : Contact/Contactus
         public IActionResult Contactus()
@@ -30,16 +35,12 @@ namespace Project_n9ws.Controllers
             {
                 _contact.Create(contactUs);
                 ModelState.Clear();
-                return RedirectToAction("Index", "New");
+                return RedirectToAction(nameof(Index), nameof(New));
             }
 
             return View(contactUs);
         }
-        [HttpGet] // Get : Contact/ContactMess
-        public IActionResult ContactMess()
-        {
-            return View(_contact.GetAll().Result);
-        }
+       
 
 
 

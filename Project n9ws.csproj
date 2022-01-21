@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\assest\GitHub.png" />
     <None Include="wwwroot\assest\News.jpg" />
     <None Include="wwwroot\assets\css\style.css" />
     <None Include="wwwroot\assets\img\about.jpg" />

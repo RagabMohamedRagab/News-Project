@@ -16,23 +16,19 @@ namespace Project_n9ws.Controllers
         {
             _news = news;
         }
-        [HttpGet]
-        // Home/Index
+        [HttpGet] // New/Index
         public IActionResult Index()
         {
             return View(_news.GetAll().Result);
         }
-        [HttpGet]
-        // Home/About
-        public IActionResult About()
+        
+        
+        public IActionResult New(Nullable<int> Id)
         {
-            return View();
-        }
-        [HttpGet]
-        // Home/Services
-        public IActionResult Services()
-        {
-            return View();
+            if (Id != null)
+            {
+                
+            }
         }
        
     }

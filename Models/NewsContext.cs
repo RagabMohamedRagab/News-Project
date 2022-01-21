@@ -9,6 +9,10 @@ namespace Project_n9ws.Models
     public class NewsContext:DbContext
     {
         public NewsContext(DbContextOptions<NewsContext> options) : base(options) { }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+        }
 
         public virtual DbSet<New> News { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
