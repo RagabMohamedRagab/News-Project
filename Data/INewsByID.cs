@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace Project_n9ws.Data
 {
-    public interface INews<T> where T:class
+    public interface INewsByID<T> where T:class
     {
-        /// GetAll
-        Task<IEnumerable<T>> GetAll();
-        
+        /// GetAll by ID
+        Task<IEnumerable<T>> GetAll(int Id);
     }
 }

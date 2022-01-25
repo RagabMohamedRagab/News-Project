@@ -29,8 +29,9 @@ namespace Project_n9ws
         {
             services.AddDbContext<NewsContext>(option => option.UseSqlServer(Configuration.GetConnectionString("MyFirstProject")));
             services.AddControllersWithViews();
-            services.AddScoped<INews<Category>,CategoryManger>();
-            services.AddScoped<INews<ContactUs>,ContactManager>();
+            services.AddScoped<INew<Category>,CategoryManger>();
+            services.AddScoped<INew<ContactUs>,ContactManager>();
+            services.AddTransient<INewsByID<New>,NewManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,19 +46,16 @@ namespace Project_n9ws
                 app.UseExceptionHandler("New/Error");
                 app.UseHsts();
             }
-          
-
-
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles();
             app.UseAuthentication();
-
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name:"Route1",
-                    pattern:"{Controller=New}/{action=Index}/{Id?}"
+                    name:"Default",
+                    pattern:"{Controller=News}/{action=Index}/{Id?}"
                     );
             });
         }

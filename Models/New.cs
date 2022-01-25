@@ -21,7 +21,7 @@ namespace Project_n9ws.Models
       
         public string Image { get; set; }
         [Required(ErrorMessage ="Required")]
-        [StringLength(maximumLength: 20, MinimumLength = 5)]
+        [MaxLength(50)]
         public string Topic { get; set; }
         [ForeignKey("Category")]
         public int CategoryId { get; set; }

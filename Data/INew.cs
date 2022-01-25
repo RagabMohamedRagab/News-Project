@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace Project_n9ws.Data
 {
-  public interface IAdmin<T> where T:class
+  public interface INew<T> where T:class
     {
-        /// GetAll
-        Task<IEnumerable<T>> GetAll(int Id);
+     
         // Add
         Task<int> Create(T entity);
         // remove 
@@ -16,5 +15,7 @@ namespace Project_n9ws.Data
         // Update
         Task<int> Edit(T OldEntity, T NewEntity);
         Task<T> Get(int ID);
+        /// GetAll
+        Task<IEnumerable<T>> GetAll();
     }
 }

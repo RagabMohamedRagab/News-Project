@@ -618,11 +618,6 @@ C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\staticwebassets
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Project n9ws.TagHelpers.input.cache
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Project n9ws.TagHelpers.output.cache
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Project n9ws.RazorCoreGenerate.cache
-C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\Contact\ContactMess.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\Contact\Contactus.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\New\About.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\New\Index.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\New\Services.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -636,3 +631,7 @@ C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Project n9ws.dl
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\ref\Project n9ws.dll
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Project n9ws.pdb
 C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Project n9ws.genruntimeconfig.cache
+C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\News\ContactMess.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\News\Contactus.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\News\Index.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (3)\News-Project\obj\Debug\net5.0\Razor\Views\News\New.cshtml.g.cs
