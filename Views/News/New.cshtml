@@ -10,9 +10,9 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 Person">
                     <div class="card mx-30 mb-3">
-                        <img src="https://i.postimg.cc/WzjcC7Hb/1.jpg" class="card-img-top" alt="...">
+                        <img src="~/assets/img/mohsalah.jpg" width="100" height="150" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" style="text-transform:capitalize">
                                 @item.Title
@@ -20,9 +20,16 @@
 
                             <p class="card-text">
                                 @item.Topic
-                            </p><h6 lang="en" class="text-primary">
-                                @item.Date
-                            </h6>
+                            </p>
+                            <form class="Go">
+                                <input type="submit" class="btn btn-primary" value="Read More" />
+                            </form>
+                            <div class="text-primary card-footer foot">
+                                <span><i class="fas fa-thumbs-down"></i>&nbsp;<span>2</span></span>
+                                @*<span> @DateTime.Now.ToString("ddMMMMyyyy", new CultureInfo("en"))</span>*@
+                                <span><i class="fas fa-thumbs-up"></i>&nbsp;<span>1</span></span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -31,6 +38,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 

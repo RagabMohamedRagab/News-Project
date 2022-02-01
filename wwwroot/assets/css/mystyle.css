@@ -173,3 +173,39 @@ body {
         color: #9897A0;
         font-size: 14px;
     }
+.Person {
+    cursor:pointer;
+    transition:all .5s ease-in-out;
+    margin-bottom:2%;
+ 
+}
+.Person:hover{
+  -webkit-transform:scale(1.1,1.1);
+    transform:scale(1.1,1.1);
+}
+.Person .card img{
+    opacity:0.8;
+}
+.Person:hover .card img{
+    opacity:1;
+}
+.foot{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+}
+.foot span i{
+    font-size:1.4rem;
+}
+    .foot span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content:center;
+      
+    }
+.Go input[type='submit'] {
+    margin-bottom: 3%;
+    width:30%;
+}

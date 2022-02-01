@@ -20,30 +20,7 @@
   <ItemGroup>
     <None Include="wwwroot\assest\News.jpg" />
     <None Include="wwwroot\assets\css\style.css" />
-    <None Include="wwwroot\assets\img\about.jpg" />
-    <None Include="wwwroot\assets\img\departments-1.jpg" />
-    <None Include="wwwroot\assets\img\departments-2.jpg" />
-    <None Include="wwwroot\assets\img\departments-3.jpg" />
-    <None Include="wwwroot\assets\img\departments-4.jpg" />
-    <None Include="wwwroot\assets\img\departments-5.jpg" />
-    <None Include="wwwroot\assets\img\doctors\doctors-1.jpg" />
-    <None Include="wwwroot\assets\img\doctors\doctors-2.jpg" />
-    <None Include="wwwroot\assets\img\doctors\doctors-3.jpg" />
-    <None Include="wwwroot\assets\img\doctors\doctors-4.jpg" />
     <None Include="wwwroot\assets\img\features.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-1.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-2.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-3.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-4.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-5.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-6.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-7.jpg" />
-    <None Include="wwwroot\assets\img\gallery\gallery-8.jpg" />
-    <None Include="wwwroot\assets\img\testimonials\testimonials-1.jpg" />
-    <None Include="wwwroot\assets\img\testimonials\testimonials-2.jpg" />
-    <None Include="wwwroot\assets\img\testimonials\testimonials-3.jpg" />
-    <None Include="wwwroot\assets\img\testimonials\testimonials-4.jpg" />
-    <None Include="wwwroot\assets\img\testimonials\testimonials-5.jpg" />
     <None Include="wwwroot\assets\js\main.js" />
     <None Include="wwwroot\assets\vendor\animate.css\animate.compat.css" />
     <None Include="wwwroot\assets\vendor\animate.css\animate.css" />
@@ -159,6 +136,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
     <Folder Include="wwwroot\Jquery\" />
   </ItemGroup>
 

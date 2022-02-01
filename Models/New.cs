@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,9 +18,11 @@ namespace Project_n9ws.Models
         public string Title { get; set; }
         [Column(TypeName = "datetime2(7)")]
         public DateTime Date { get; set; }
-        
-      
+        // To Save Name of Image
         public string Image { get; set; }
+        // To Insert File from client Side
+        [NotMapped]
+        public IFormFile File { get; set; }
         [Required(ErrorMessage ="Required")]
         [MaxLength(50)]
         public string Topic { get; set; }

@@ -25,6 +25,16 @@ namespace Project_n9ws.Controllers
         {
             return View(_news.GetAll().Result);
         }
+        [HttpGet] // News/About
+        public IActionResult About()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Services()
+        {
+            return View();
+        }
         [HttpGet] // Get : News/ContactMess
         public IActionResult ContactMess()
         {
@@ -43,7 +53,7 @@ namespace Project_n9ws.Controllers
             {
                 _contact.Create(contactUs);
                 ModelState.Clear();
-                return RedirectToAction(nameof(Index), nameof(New));
+                return RedirectToAction(nameof(Index));
             }
 
             return View(contactUs);
