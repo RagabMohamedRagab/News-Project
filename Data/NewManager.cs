@@ -9,9 +9,9 @@ namespace Project_n9ws.Data
 {
     public class NewManager : INewsByID<New>
     {
-        readonly NewsContext _context;
+        readonly NewsContextDb _context;
 
-        public NewManager(NewsContext context)
+        public NewManager(NewsContextDb context)
         {
             _context = context;
         }

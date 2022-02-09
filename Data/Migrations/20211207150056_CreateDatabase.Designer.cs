@@ -9,7 +9,7 @@ using Project_n9ws.Models;
 
 namespace Project_n9ws.Migrations
 {
-    [DbContext(typeof(NewsContext))]
+    [DbContext(typeof(NewsContextDb))]
     [Migration("20211207150056_CreateDatabase")]
     partial class CreateDatabase
     {

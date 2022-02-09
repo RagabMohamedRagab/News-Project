@@ -9,16 +9,16 @@ namespace Project_n9ws.Data
 {
     public class CategoryManger : INew<Category>
     {
-        readonly NewsContext _newsContext;
-        public CategoryManger(NewsContext newsContext)
+        readonly NewsContextDb _NewsContextDb;
+        public CategoryManger(NewsContextDb NewsContextDb)
         {
-            _newsContext = newsContext;
+            _NewsContextDb = NewsContextDb;
         }
 
         public async Task<int> Create(Category category)
         {
-           await _newsContext.Categories.AddAsync(category);
-            return await _newsContext.SaveChangesAsync();
+           await _NewsContextDb.Categories.AddAsync(category);
+            return await _NewsContextDb.SaveChangesAsync();
         }
 
         public async Task<int> Edit(Category OldEntity, Category NewEntity)
@@ -29,7 +29,7 @@ namespace Project_n9ws.Data
                 {
                     OldEntity.Name = NewEntity.Name;
                     OldEntity.Description = NewEntity.Description;
-                    return await _newsContext.SaveChangesAsync();
+                    return await _NewsContextDb.SaveChangesAsync();
                 }
                 throw new Exception();
             }
@@ -41,17 +41,17 @@ namespace Project_n9ws.Data
         }
         public async Task<Category> Get(int ID)
         {
-            return await _newsContext.Categories.FindAsync(ID);
+            return await _NewsContextDb.Categories.FindAsync(ID);
         }
         public async Task<IEnumerable<Category>> GetAll()
         {
-            return await _newsContext.Categories.ToListAsync();
+            return await _NewsContextDb.Categories.ToListAsync();
         }
 
         public async Task<int> Remove(Category category)
         {
-            _newsContext.Categories.Remove(category);
-            return await _newsContext.SaveChangesAsync();
+            _NewsContextDb.Categories.Remove(category);
+            return await _NewsContextDb.SaveChangesAsync();
         }
     }
 }

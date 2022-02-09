@@ -24,7 +24,7 @@ namespace Project_n9ws.Models
         [NotMapped]
         public IFormFile File { get; set; }
         [Required(ErrorMessage ="Required")]
-        [MaxLength(50)]
+      
         public string Topic { get; set; }
         [ForeignKey("Category")]
         public int CategoryId { get; set; }

@@ -9,7 +9,7 @@ using Project_n9ws.Models;
 
 namespace Project_n9ws.Migrations
 {
-    [DbContext(typeof(NewsContext))]
+    [DbContext(typeof(NewsContextDb))]
     [Migration("20220121181254_DeleteDataAnnotation")]
     partial class DeleteDataAnnotation
     {

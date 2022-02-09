@@ -68,6 +68,11 @@ namespace Project_n9ws.Controllers
             ViewBag.TypeNews = _news.Get(Id).Result.Name;
             return View(_newsByID.GetAll(Id).Result);
         }
+        [HttpGet] // News/Register
+        public IActionResult Register()
+        {
+            return View();
+        }
 
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Project_n9ws.Models
 {
-    public class NewsContext:DbContext
+    public class NewsContextDb:DbContext
     {
-        public NewsContext(DbContextOptions<NewsContext> options) : base(options) { }
+        public NewsContextDb(DbContextOptions<NewsContextDb> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -18,5 +18,7 @@ namespace Project_n9ws.Models
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<ContactUs> ContactUs { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
     }
 }

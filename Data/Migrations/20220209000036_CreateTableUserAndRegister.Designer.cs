@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_n9ws.Models;
 
 namespace Project_n9ws.Migrations
 {
-    [DbContext(typeof(NewsContext))]
-    partial class NewsContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(NewsContextDb))]
+    [Migration("20220209000036_CreateTableUserAndRegister")]
+    partial class CreateTableUserAndRegister
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,6 +69,21 @@ namespace Project_n9ws.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("ContactUs");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.Country", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("Project_n9ws.Models.New", b =>
@@ -126,6 +143,35 @@ namespace Project_n9ws.Migrations
                     b.ToTable("Teams");
                 });
 
+            modelBuilder.Entity("Project_n9ws.Models.User", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("Project_n9ws.Models.New", b =>
                 {
                     b.HasOne("Project_n9ws.Models.Category", "Category")
@@ -137,9 +183,23 @@ namespace Project_n9ws.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("Project_n9ws.Models.User", b =>
+                {
+                    b.HasOne("Project_n9ws.Models.Country", "Country")
+                        .WithMany("User")
+                        .HasForeignKey("CountryId");
+
+                    b.Navigation("Country");
+                });
+
             modelBuilder.Entity("Project_n9ws.Models.Category", b =>
                 {
                     b.Navigation("News");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.Country", b =>
+                {
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

@@ -9,7 +9,7 @@ using Project_n9ws.Models;
 
 namespace Project_n9ws.Migrations
 {
-    [DbContext(typeof(NewsContext))]
+    [DbContext(typeof(NewsContextDb))]
     [Migration("20220121180042_AddDataAnnotationToTeamEntity")]
     partial class AddDataAnnotationToTeamEntity
     {

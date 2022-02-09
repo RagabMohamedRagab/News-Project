@@ -9,9 +9,9 @@ namespace Project_n9ws.Data
 {
     public class ContactManager : INew<ContactUs>
     {
-        readonly NewsContext _context;
+        readonly NewsContextDb _context;
 
-        public ContactManager(NewsContext context)
+        public ContactManager(NewsContextDb context)
         {
             _context = context;
         }
