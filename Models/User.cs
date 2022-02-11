@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,12 +13,16 @@ namespace Project_n9ws.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        [Required,MaxLength(20),Column(TypeName ="nvarchar(20)")]
-        public string Name { get; set; }
-        [RegularExpression(@"[a-z A-Z 0-9] {5,10}\d{1,5}@[gmail|yahoo]\.com",ErrorMessage ="min Five charactries and max ten charactries"),Required,Display(Name="Your Email")]
+        [Required,MaxLength(20),Column(TypeName ="nvarchar(20)"),Display(Name ="First Name")]
+        public string FirstName { get; set; }
+        [Required, MaxLength(20), Column(TypeName = "nvarchar(20)"),Display(Name ="Last Name")]
+        public string LastName { get; set; }
+        //[RegularExpression(@"[a-z A-Z 0-9] {5,10}\d{1,5}@[gmail|yahoo]\.com",ErrorMessage ="min Five charactries and max ten charactries"),Required,Display(Name="Your Email")]
         public string Email { get; set; }
-        [Required]
-        [RegularExpression(@"*[A-Z a-z 0-9 _]")]
+        [Column(TypeName="nvarchar(200)")]
+        public string Image { get; set;}
+        public IFormFile File { get; set; }
+        [Column("Password",TypeName ="nvarchar(100)"),Required(ErrorMessage ="Enter Correct Password")]
         public string Password { get; set; }
         [Display(Name="Country"),ForeignKey(nameof(Country))]
         public Nullable<int> CountryId { get; set; }

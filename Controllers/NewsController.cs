@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Project_n9ws.Data;
 using Project_n9ws.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,11 +16,17 @@ namespace Project_n9ws.Controllers
         readonly INew<Category> _news; 
         readonly INew<ContactUs> _contact;
         readonly INewsByID<New> _newsByID;
-        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID)
+        readonly INew<User> _User;
+        readonly IWebHostEnvironment _webHost;
+        readonly INew<Country> _Country;
+        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country)
         {
             _news = news;
             _contact = contact;
             _newsByID = newsByID;
+            _User = user;
+            _webHost = webHost;
+            _Country = country;
         }
 
         [HttpGet] // News/Index
@@ -71,8 +80,29 @@ namespace Project_n9ws.Controllers
         [HttpGet] // News/Register
         public IActionResult Register()
         {
+            ViewBag.Countries = new SelectList(_Country.GetAll().Result.Select(b => b.Name).Distinct());
             return View();
         }
-
+        [HttpPost] // News/Index
+        public IActionResult Register(User user)
+        {
+            string FileName = string.Empty;
+            if (user.File != null)
+            {
+                string DirectFolder = Path.Combine(_webHost.WebRootPath, @"assets\img");
+                 FileName = user.File.FileName;
+                string FullDirecteFolder = Path.Combine(DirectFolder, FileName);
+                FileStream  stream = new FileStream(FullDirecteFolder, FileMode.Create);
+                user.File.CopyTo(stream);
+            }
+            user.Image = FileName;
+            if (ModelState.IsValid)
+            {
+                if (_User.Create(user).Result > 0)
+                    return RedirectToAction(nameof(Index));
+                
+            }
+            return View();
+        }
     }
 }

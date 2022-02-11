@@ -285,6 +285,9 @@ body {
 .form-detail .input-text {
 	margin-bottom: 26px;
 }
+.form-row .select-text {
+    margin-bottom: 26px;
+}
 .form-detail input {
 	width: 94.5%;
     padding: 10.5px 15px;
@@ -308,8 +311,34 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 }
+.form-row select {
+    width: 94.5%;
+    padding: 10.5px 15px;
+    border: 1px solid #e5e5e5;
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
 .form-detail input:focus {
 	border: 1px solid #b3b3b3;
+}
+.form-row select:focus {
+    border: 1px solid #b3b3b3;
 }
 .form-detail .register {
 	font-size: 18px;
@@ -367,3 +396,9 @@ input:-moz-placeholder { /* Firefox 18- */
 	    margin: 175px 20px;
 	}
 }
+.haveAccount{
+    cursor:pointer;
+}
+    .haveAccount:hover {
+        color: #3786bd;
+    }

@@ -11,7 +11,7 @@ namespace Project_n9ws.Models
         public NewsContextDb(DbContextOptions<NewsContextDb> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.Entity<User>().Ignore(b => b.File);
         }
 
         public virtual DbSet<New> News { get; set; }

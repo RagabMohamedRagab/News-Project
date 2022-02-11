@@ -32,6 +32,8 @@ namespace Project_n9ws
             services.AddScoped<INew<Category>,CategoryManger>();
             services.AddScoped<INew<ContactUs>,ContactManager>();
             services.AddTransient<INewsByID<New>,NewManager>();
+            services.AddTransient<INew<User>, UserManager>();
+            services.AddTransient<INew<Country>, CountryManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

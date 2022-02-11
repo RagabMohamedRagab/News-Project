@@ -1,6 +1,5 @@
-﻿
-
-@{ 
+﻿@model User;
+@{
     Layout = null;
 }
 @*Style Of Css*@
@@ -9,26 +8,62 @@
 <link href="~/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 <div class="page-content">
     <div class="form-v5-content">
-        <form class="form-detail" action="#" method="post">
+        <form asp-area="" asp-controller="News" asp-action="Register" asp-antiforgery="true" enctype="multipart/form-data" class="form-detail" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
             <h2>Register Account Form</h2>
             <div class="form-row">
-                <label for="full-name">Full Name</label>
-                <input type="text" name="full-name" id="full-name" class="input-text" placeholder="Your Name" required>
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="input-text" placeholder="First Name" required>
                 <i class="fas fa-user"></i>
+                <span asp-validation-for="FirstName"> </span>
             </div>
             <div class="form-row">
-                <label for="your-email">Your Email</label>
-                <input type="text" name="your-email" id="your-email" class="input-text" placeholder="Your Email" required pattern="[^\]+\[^\]+.[a-zA-Z]{2,6}">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="input-text" placeholder="Last Name" required>
+                <i class="fas fa-user"></i>
+                <span asp-validation-for="LastName"> </span>
+            </div>
+            <div class="form-row">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="input-text" placeholder="Your Email" >
                 <i class="fas fa-envelope"></i>
+                <span asp-validation-for="Email"> </span>
+
             </div>
             <div class="form-row">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="input-text" placeholder="Your Password" required>
+                <label asp-for="Password"></label>
+                <input type="password"  asp-for="Password" class="input-text" placeholder="Your Password">
                 <i class="fas fa-lock"></i>
+                <span asp-validation-for="Password"> </span>
+            </div>
+            <div class="form-row">
+                <label asp-for="CountryId"></label>
+                <select asp-for="CountryId" asp-items="@ViewBag.Countries" class="select-text">
+                    <option selected>Select Country</option>
+                    <option selected value="1">Cario</option>
+                </select>
+                <i class="fas fa-home"></i>
+                <span asp-validation-for="CountryId"> </span>
+
+            </div>
+            <div class="form-row">
+                <label asp-for="Image"></label>
+                <input type="file" asp-for="File" class="input-text" placeholder="Your Image">
+                <i class="fas fa-folder-plus"></i>
+                <span asp-validation-for="File"> </span>
             </div>
             <div class="form-row-last">
                 <input type="submit" name="register" class="register" value="Register">
             </div>
+           
+                <div class="form-row-last">
+                    <a class="btn btn-primary haveAccount">Are you have account</a>
+                </div>
+            
         </form>
     </div>
 </div>
+
+@section Script{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
