@@ -84,6 +84,7 @@ namespace Project_n9ws.Controllers
             return View();
         }
         [HttpPost] // News/Index
+        [ValidateAntiForgeryToken]
         public IActionResult Register(User user)
         {
             string FileName = string.Empty;
@@ -95,6 +96,11 @@ namespace Project_n9ws.Controllers
                 FileStream  stream = new FileStream(FullDirecteFolder, FileMode.Create);
                 user.File.CopyTo(stream);
             }
+            var NewID =_Country.GetAll().Result.Where(P=>P.Name== Request.Form["country"]).FirstOrDefault();
+            if (NewID != null)
+            {
+                user.CountryId = NewID.ID;
+            }
             user.Image = FileName;
             if (ModelState.IsValid)
             {
@@ -102,6 +108,11 @@ namespace Project_n9ws.Controllers
                     return RedirectToAction(nameof(Index));
                 
             }
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
             return View();
         }
     }

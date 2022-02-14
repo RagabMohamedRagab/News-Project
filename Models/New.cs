@@ -26,8 +26,8 @@ namespace Project_n9ws.Models
         [Required(ErrorMessage ="Required")]
       
         public string Topic { get; set; }
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public int? CategoryId { get; set; }
         public virtual Category Category { get; set; }
     }
 }

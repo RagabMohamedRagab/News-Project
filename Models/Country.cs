@@ -12,7 +12,7 @@ namespace Project_n9ws.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        [MaxLength(20),Column(TypeName = "nvarchar(20)")]
+        [MaxLength(20),Column(TypeName = "nvarchar(20)"),Required]
         public string Name { get; set; }
         public virtual ICollection<User> User { get; set; }
     }
