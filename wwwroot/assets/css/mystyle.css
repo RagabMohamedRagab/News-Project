@@ -771,6 +771,8 @@ input.input100 {
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
+    text-decoration:none;
+    cursor:pointer;
 }
 
     .login100-form-btn:hover {
@@ -843,4 +845,36 @@ input.input100 {
 }
 
 
-
+.like,
+.dislike {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background: #0268be;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+}
+    .like i,
+    .dislike i{
+        color:#fff;
+        font-size:1.6rem;
+    }
+input.qty1::placeholder {
+    color: red;
+}
+.qty1,
+.qty2 {
+    border: none;
+    width: 20px;
+    background: transparent;
+}
+/*#header {
+    background: url(https://images.unsplash.com/photo-1415795854641-f4a487a0fdc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) center center / cover no-repeat;
+}*/

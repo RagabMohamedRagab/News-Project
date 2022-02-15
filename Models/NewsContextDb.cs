@@ -11,7 +11,10 @@ namespace Project_n9ws.Models
         public NewsContextDb(DbContextOptions<NewsContextDb> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().Ignore(b => b.File);
+            modelBuilder.Entity<User>().Ignore(b =>  b.File);
+            modelBuilder.Entity<User>().Ignore(b =>  b.GetCountry);
+            modelBuilder.Entity<User>().HasIndex(i => new { i.ID, i.FirstName, i.LastName, i.Password, i.Email });
+          
         }
 
         public virtual DbSet<New> News { get; set; }

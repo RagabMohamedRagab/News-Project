@@ -2,42 +2,44 @@
 @{
     ViewData["Title"] = "New";
 }
-<div class="wrapper">
+<section class="wrapper">
     <div class="section-title">
         <h2>@ViewBag.TypeNews</h2>
     </div>
     <div class="container">
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-6 col-lg-4 Person">
-                    <div class="card mx-30 mb-3">
-                        <img src="~/assets/img/mohsalah.jpg" width="100" height="150" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="text-transform:capitalize">
-                                @item.Title
-                            </h5>
+     @foreach (var item in Model) {
 
-                            <p class="card-text">
-                                @item.Topic
-                            </p>
-                            <form class="Go">
-                                <input type="submit" class="btn btn-primary" value="Read More" />
-                            </form>
-                            <div class="text-primary card-footer foot">
-                                <span><i class="fas fa-thumbs-down"></i>&nbsp;<span>2</span></span>
-                                @*<span> @DateTime.Now.ToString("ddMMMMyyyy", new CultureInfo("en"))</span>*@
-                                <span><i class="fas fa-thumbs-up"></i>&nbsp;<span>1</span></span>
-                            </div>
-
-                        </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="~/assets/img/mohsalah.jpg" class="img-fluid" alt="" style="width:100%;height:100%">
+                </div>
+                <div class="col-lg-8 pt-4 pt-lg-0 content">
+                    <h2 class="m-2">@item.Title</h2>
+                    <p style="font-size:1.7rem;line-height:2.9rem">
+                       @item.Topic
+                    </p>
+                    <div class="d-flex justify-content-between  mt-2 mb-2">
+                     
+                            <a class="like">
+                               
+                                <i class="fas fa-thumbs-up "></i> <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+                            </a>
+                            <a class="dislike">
+                               
+                                <i class="fas fa-thumbs-down"></i> <input class="qty2" name="qty2" readonly="readonly" type="text" value="0" />
+                            </a>
+                       
                     </div>
                 </div>
-
-            }
+        
+            
         </div>
+     }
     </div>
-</div>
+</section>
+
+
+
 
 
 

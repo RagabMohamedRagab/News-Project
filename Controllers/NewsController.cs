@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Project_n9ws.Data;
 using Project_n9ws.Models;
+using Project_n9ws.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,13 +14,15 @@ namespace Project_n9ws.Controllers
 {
     public class NewsController : Controller
     {
-        readonly INew<Category> _news; 
+        readonly INew<Category> _news;
         readonly INew<ContactUs> _contact;
         readonly INewsByID<New> _newsByID;
         readonly INew<User> _User;
         readonly IWebHostEnvironment _webHost;
         readonly INew<Country> _Country;
-        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country)
+        readonly SearchEmail _searchEmail;
+      
+        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INewsByID<New> newsByID1)
         {
             _news = news;
             _contact = contact;
@@ -27,6 +30,8 @@ namespace Project_n9ws.Controllers
             _User = user;
             _webHost = webHost;
             _Country = country;
+            _searchEmail = searchEmail;
+           
         }
 
         [HttpGet] // News/Index
@@ -68,7 +73,7 @@ namespace Project_n9ws.Controllers
             return View(contactUs);
         }
         [HttpGet] // News/New/Id
-        public IActionResult New([FromQuery]int Id)
+        public IActionResult New([FromRoute]int Id)
         {
             if (Id == 0)
             {
@@ -77,6 +82,7 @@ namespace Project_n9ws.Controllers
             ViewBag.TypeNews = _news.Get(Id).Result.Name;
             return View(_newsByID.GetAll(Id).Result);
         }
+        // Start Register Form Action
         [HttpGet] // News/Register
         public IActionResult Register()
         {
@@ -91,12 +97,12 @@ namespace Project_n9ws.Controllers
             if (user.File != null)
             {
                 string DirectFolder = Path.Combine(_webHost.WebRootPath, @"assets\img");
-                 FileName = user.File.FileName;
+                FileName = user.File.FileName;
                 string FullDirecteFolder = Path.Combine(DirectFolder, FileName);
-                FileStream  stream = new FileStream(FullDirecteFolder, FileMode.Create);
+                FileStream stream = new FileStream(FullDirecteFolder, FileMode.Create);
                 user.File.CopyTo(stream);
             }
-            var NewID =_Country.GetAll().Result.Where(P=>P.Name== Request.Form["country"]).FirstOrDefault();
+            var NewID = _Country.GetAll().Result.Where(P => P.Name == Request.Form["country"]).FirstOrDefault();
             if (NewID != null)
             {
                 user.CountryId = NewID.ID;
@@ -106,14 +112,35 @@ namespace Project_n9ws.Controllers
             {
                 if (_User.Create(user).Result > 0)
                     return RedirectToAction(nameof(Index));
-                
+
             }
             return View();
         }
-        [HttpGet]
+        // End Register Form Action
+        // Start Login Form Action
+        [HttpGet] // News/Login
         public IActionResult Login()
         {
             return View();
         }
+        [HttpPost]  // News/Login/user
+        [ValidateAntiForgeryToken]
+        public IActionResult Login([Bind("Email", "Password")] User user)
+        {
+            if (user.Email != null && user.Password != null)
+            {
+                if (_searchEmail.SearchEmailORPassword(user.Email))
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            return View("Error");
+        }
+        // End Login Form Action
+       public IActionResult Details()
+        {
+            return View();
+        }
+
     }
 }

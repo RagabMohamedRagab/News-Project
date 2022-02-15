@@ -16,6 +16,8 @@ namespace Project_n9ws.Models
         [Required(ErrorMessage ="*Title*")]
         [StringLength(maximumLength: 20, MinimumLength = 5)]
         public string Title { get; set; }
+        
+       
         [Column(TypeName = "datetime2(7)")]
         public DateTime Date { get; set; }
         // To Save Name of Image

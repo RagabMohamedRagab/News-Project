@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Project_n9ws.Data;
 using Project_n9ws.Models;
+using Project_n9ws.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,8 @@ namespace Project_n9ws
             services.AddTransient<INewsByID<New>,NewManager>();
             services.AddTransient<INew<User>, UserManager>();
             services.AddTransient<INew<Country>, CountryManager>();
+            services.AddScoped<SearchEmail>();
+            services.AddTransient<INewsByID<New>,NewManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

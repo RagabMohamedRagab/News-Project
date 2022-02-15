@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_n9ws.Models;
 
 namespace Project_n9ws.Migrations
 {
     [DbContext(typeof(NewsContextDb))]
-    partial class NewsContextDbModelSnapshot : ModelSnapshot
+    [Migration("20220214205733_ExculdePropertyOfGetCountryFromEntityAndAddingRegulareExpression")]
+    partial class ExculdePropertyOfGetCountryFromEntityAndAddingRegulareExpression
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,6 +156,7 @@ namespace Project_n9ws.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FirstName")

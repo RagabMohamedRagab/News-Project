@@ -9,23 +9,18 @@
   <ItemGroup>
     <Compile Remove="Areas\**" />
     <Compile Remove="Extentions\**" />
-    <Compile Remove="Services\**" />
     <Content Remove="Areas\**" />
     <Content Remove="Extentions\**" />
-    <Content Remove="Services\**" />
     <EmbeddedResource Remove="Areas\**" />
     <EmbeddedResource Remove="Extentions\**" />
-    <EmbeddedResource Remove="Services\**" />
     <None Remove="Areas\**" />
     <None Remove="Extentions\**" />
-    <None Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\assest\News.jpg" />
     <None Include="wwwroot\assets\css\style.css" />
     <None Include="wwwroot\assets\css\util.css" />
-    <None Include="wwwroot\assets\img\features.jpg" />
     <None Include="wwwroot\assets\js\main.js" />
     <None Include="wwwroot\assets\vendor\animate.css\animate.compat.css" />
     <None Include="wwwroot\assets\vendor\animate.css\animate.css" />
