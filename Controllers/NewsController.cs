@@ -111,6 +111,7 @@ namespace Project_n9ws.Controllers
             if (ModelState.IsValid)
             {
                 if (_User.Create(user).Result > 0)
+                    ViewBag.Log = 1;
                     return RedirectToAction(nameof(Index));
 
             }
@@ -137,9 +138,9 @@ namespace Project_n9ws.Controllers
             return View("Error");
         }
         // End Login Form Action
-       public IActionResult Details()
+       public IActionResult LogOut()
         {
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
     }

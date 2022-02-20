@@ -9,3 +9,11 @@
         input.val(input.val() - 1);
     });
 });
+let element = document.getElementsByClassName(".appointment-btn")[0];
+element.OnClick = function () {
+    if (this.textContent == "Sign In") {
+        this.textContent = "Log Out";
+    } else {
+        this.textContent = "Sign In";
+    }
+}

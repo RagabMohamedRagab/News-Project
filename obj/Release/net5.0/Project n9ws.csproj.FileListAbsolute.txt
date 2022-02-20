@@ -1087,3 +1087,4 @@ C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\ref\Project n
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.pdb
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.genruntimeconfig.cache
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\PartialView.cshtml.g.cs
