@@ -26,8 +26,22 @@ using Project_n9ws.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\pc\Desktop\New folder (5)\News-Project\Views\_ViewImports.cshtml"
+using System.Threading;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\pc\Desktop\New folder (5)\News-Project\Views\_ViewImports.cshtml"
+using System.Globalization;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"22ad9258f5333f1559b87c30722f2842213a0233", @"/Views/News/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"32002e39bc90812bc53ffa9e15140d36eb4721e7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1efb7efa32fcbe1db082d25360979c1509af859f", @"/Views/_ViewImports.cshtml")]
     public class Views_News_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Category>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-primary details"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -98,7 +112,7 @@ using Project_n9ws.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                        <div class=\"row my-3\">\r\n                            <div class=\"col\">  ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22ad9258f5333f1559b87c30722f2842213a02336157", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22ad9258f5333f1559b87c30722f2842213a02336519", async() => {
                 WriteLiteral("Details");
             }
             );
