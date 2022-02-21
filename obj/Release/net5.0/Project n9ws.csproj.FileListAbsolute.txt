@@ -894,7 +894,6 @@ C:\Users\pc\Desktop\New folder (5)\News-Project\bin\Release\net5.0\runtimes\win-
 C:\Users\pc\Desktop\New folder (5)\News-Project\bin\Release\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\pc\Desktop\New folder (5)\News-Project\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\pc\Desktop\New folder (5)\News-Project\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.AssemblyInfoInputs.cache
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.AssemblyInfo.cs
@@ -914,7 +913,6 @@ C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\N
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\Index.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\New.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\Register.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\Services.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -1088,3 +1086,5 @@ C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.genruntimeconfig.cache
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\PartialView.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\TeamMember.cshtml.g.cs

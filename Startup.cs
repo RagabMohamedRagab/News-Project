@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,13 +31,13 @@ namespace Project_n9ws
         {
             services.AddDbContext<NewsContextDb>(option => option.UseSqlServer(Configuration.GetConnectionString("MyFirstProject")));
             services.AddControllersWithViews();
-            services.AddScoped<INew<Category>,CategoryManger>();
-            services.AddScoped<INew<ContactUs>,ContactManager>();
-            services.AddTransient<INewsByID<New>,NewManager>();
+            services.AddScoped<INew<Category>, CategoryManger>();
+            services.AddScoped<INew<ContactUs>, ContactManager>();
+            services.AddTransient<INewsByID<New>, NewManager>();
             services.AddTransient<INew<User>, UserManager>();
             services.AddTransient<INew<Country>, CountryManager>();
             services.AddScoped<SearchEmail>();
-            services.AddTransient<INewsByID<New>,NewManager>();
+            services.AddTransient<INewsByID<New>, NewManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

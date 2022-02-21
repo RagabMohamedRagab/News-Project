@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Project_n9ws.Controllers
 {
@@ -21,7 +22,7 @@ namespace Project_n9ws.Controllers
         readonly IWebHostEnvironment _webHost;
         readonly INew<Country> _Country;
         readonly SearchEmail _searchEmail;
-      
+        
         public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INewsByID<New> newsByID1)
         {
             _news = news;
@@ -31,7 +32,7 @@ namespace Project_n9ws.Controllers
             _webHost = webHost;
             _Country = country;
             _searchEmail = searchEmail;
-           
+            
         }
 
         [HttpGet] // News/Index
@@ -45,7 +46,7 @@ namespace Project_n9ws.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Services()
+        public IActionResult TeamMember()
         {
             return View();
         }
@@ -138,10 +139,7 @@ namespace Project_n9ws.Controllers
             return View("Error");
         }
         // End Login Form Action
-       public IActionResult LogOut()
-        {
-            return RedirectToAction(nameof(Index));
-        }
+      
 
     }
 }

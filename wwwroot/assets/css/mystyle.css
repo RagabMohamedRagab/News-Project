@@ -853,7 +853,7 @@ input.input100 {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    background: #0268be;
+  
     border: 1px solid transparent;
     white-space: nowrap;
     padding: 6px 12px;
@@ -862,9 +862,9 @@ input.input100 {
     border-radius: 4px;
 }
     .like i,
-    .dislike i{
-        color:#fff;
-        font-size:1.6rem;
+    .dislike i {
+        color: #0268be;
+        font-size: 1.6rem;
     }
 input.qty1::placeholder {
     color: red;
@@ -875,6 +875,3 @@ input.qty1::placeholder {
     width: 20px;
     background: transparent;
 }
-/*#header {
-    background: url(https://images.unsplash.com/photo-1415795854641-f4a487a0fdc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) center center / cover no-repeat;
-}*/
