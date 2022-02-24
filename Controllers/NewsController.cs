@@ -112,7 +112,6 @@ namespace Project_n9ws.Controllers
             if (ModelState.IsValid)
             {
                 if (_User.Create(user).Result > 0)
-                    ViewBag.Log = 1;
                     return RedirectToAction(nameof(Index));
 
             }
