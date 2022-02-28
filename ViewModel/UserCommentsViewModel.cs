@@ -14,6 +14,6 @@ namespace Project_n9ws.ViewModel
         }
         public  User Users { get; set; }
         public DateTime Date { get; set; }
-        public string Text { get; set; }
+        public Comment Comments { get; set; }
     }
 }

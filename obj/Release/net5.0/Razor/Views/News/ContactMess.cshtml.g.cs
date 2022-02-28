@@ -28,20 +28,27 @@ using Project_n9ws.Models;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\pc\Desktop\New folder (5)\News-Project\Views\_ViewImports.cshtml"
-using System.Threading;
+using Project_n9ws.ViewModel;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\pc\Desktop\New folder (5)\News-Project\Views\_ViewImports.cshtml"
+using System.Threading;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\pc\Desktop\New folder (5)\News-Project\Views\_ViewImports.cshtml"
 using System.Globalization;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1ae6c0592eda7bc2f6748fc887dd124c37aa7d3c", @"/Views/News/ContactMess.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1efb7efa32fcbe1db082d25360979c1509af859f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"44768131cd06723a71e864182baf4834d74ca8a4", @"/Views/_ViewImports.cshtml")]
     public class Views_News_ContactMess : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ContactUs>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "News", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -168,7 +175,7 @@ using System.Globalization;
 #line hidden
 #nullable disable
             WriteLiteral("        </tbody>\r\n    </table>\r\n</div>\r\n<div class=\"row my-3 d-flex align-content-center flex-wrap\" data-aos=\"fade-up\">\r\n    <div> ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ae6c0592eda7bc2f6748fc887dd124c37aa7d3c7981", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ae6c0592eda7bc2f6748fc887dd124c37aa7d3c8166", async() => {
                 WriteLiteral("Home <i class=\"fas fa-arrow-circle-right\"></i>");
             }
             );

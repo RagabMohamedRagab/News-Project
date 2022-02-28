@@ -781,7 +781,6 @@ C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\New
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\News\Login.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\News\New.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\News\Register.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\News\Services.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -792,3 +791,6 @@ C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Project n9ws.Ra
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Project n9ws.Views.pdb
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Project n9ws.csproj.CopyComplete
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Project n9ws.genruntimeconfig.cache
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\News\AllComments.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\News\CommentsPartialView.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Debug\net5.0\Razor\Views\News\TeamMember.cshtml.g.cs
