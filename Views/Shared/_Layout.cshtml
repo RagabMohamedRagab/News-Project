@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Thread.CurrentThread.CurrentCulture = new CultureInfo("en-UK");
 
 }
@@ -44,7 +44,7 @@
         <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
             <div class="align-items-center d-none d-md-flex">
                 <i class="bi bi-clock"></i> @DateTime.Now
-                        
+
             </div>
             <div class="d-flex align-items-center">
                 <i class="bi bi-phone"></i> Call me now +0201121237611
@@ -70,7 +70,7 @@
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-          
+
             <a asp-area="" asp-controller="News" asp-action="Login" class="appointment-btn scrollto">Login</a>
 
         </div>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
 
-               
+
                 <!-- Slide 3 -->
                 <div class="carousel-item" style="background-image: url(/assets/img/slide/3.jpg)">
                     <div class="container">
@@ -103,17 +103,17 @@
                 </div>
             </div>
 
-            </div>
+        </div>
 
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-            </a>
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
 
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-            </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
 
-       
+
     </section><!-- End Hero -->
     <section class="container">
         <div class="row">
@@ -150,9 +150,10 @@
     <script src="~/bootstrap/js/bootstrap.js"></script>
     <script src="~/assets/js/main.js"></script>
     <script src="~/assets/js/myscript.js"></script>
-    @if (IsSectionDefined("Script")) {
+    @if (IsSectionDefined("Script"))
+    {
 
-    @await RenderSectionAsync("Script",false);
+        @await RenderSectionAsync("Script", false);
     }
 </body>
 

@@ -2,12 +2,17 @@
 @{
     ViewData["Title"] = "New";
 }
-<section class="wrapper">
-    <div class="section-title">
+@{
+    Thread.CurrentThread.CurrentCulture = new CultureInfo("en-UK");
+
+}
+<section class="wrapper col-md-12">
+    <div class="section-title ">
         <h2>@ViewBag.TypeNews</h2>
     </div>
     <div class="container">
-     @foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
 
             <div class="row mb-3">
                 <div class="col-lg-4">
@@ -16,27 +21,34 @@
                 <div class="col-lg-8 pt-4 pt-lg-0 content">
                     <h2 class="m-2">@item.Title&nbsp;<span style="font-size:.9rem">@item.Date</span></h2>
                     <p style="font-size:1.7rem;line-height:2.9rem">
-                       @item.Topic
+                        @item.Topic
                     </p>
                     <div class="d-flex justify-content-between  mt-2 mb-2">
-                     
-                            <a class="like">
-                               
-                                <i class="fas fa-thumbs-up Add"></i> <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
-                            </a>
-                            <a class="dislike">
-                               
-                                <i class="fas fa-thumbs-down Add"></i> <input class="qty2" name="qty2" readonly="readonly" type="text" value="0" />
-                            </a>
-                       
+
+                        <a class="like">
+
+                            <i class="fas fa-thumbs-up Add"></i> <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+                        </a>
+                        <a class="dislike">
+
+                            <i class="fas fa-thumbs-down Add"></i> <input class="qty2" name="qty2" readonly="readonly" type="text" value="0" />
+                        </a>
+
                     </div>
                 </div>
-        
-            
-        </div>
-     }
+
+
+            </div>
+        }
     </div>
 </section>
+
+<partial name="CommentsPartialView" />
+
+
+
+
+
 
 
 
