@@ -1,7 +1,8 @@
 ﻿@model UserCommentsViewModel;
 
 <section style="background-color: #eee;">
-    <form action="/" method="post">
+    <form asp-area="" asp-controller="News" asp-action="Comment" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
         <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
             <div class="d-flex flex-start w-100">
                 <img class="rounded-circle shadow-1-strong me-3"
@@ -14,13 +15,15 @@
                               id="textAreaExample"
                               rows="4"
                               style="background: #fff;" placeholder="Message" asp-for="Comments.Text"></textarea>
-
+                    <span asp-validation-for="Comments.Text" class="text-danger"></span>
                 </div>
             </div>
-            <div class="float-end mt-2 pt-1">
-                <input type="submit" class="btn btn-primary btn-sm"/>
-                <button type="button" class="btn btn-outline-primary btn-sm">Cancel</button>
+            <div class="d-flex justify-content-center mt-3 pt-1">
+                <input type="submit" class="btn btn-primary btn-sm w-50" />
             </div>
         </div>
     </form>
 </section>
+@section Script{ 
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -17,7 +17,7 @@ namespace Project_n9ws.Services
         // SearchEmail
         public  bool SearchEmailORPassword(string Email)
         {
-            var user=  _contextDb.Users.FirstOrDefault(em=>em.Email==Email);
+            var user=  _contextDb.Users.SingleOrDefault(em=>em.Email==Email);
             return (user == null) ? false : true;
         }
 

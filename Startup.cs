@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Project_n9ws.Data;
 using Project_n9ws.Models;
 using Project_n9ws.Services;
+using Project_n9ws.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,7 @@ namespace Project_n9ws
             services.AddTransient<INew<Country>, CountryManager>();
             services.AddScoped<SearchEmail>();
             services.AddTransient<INewsByID<New>, NewManager>();
+            services.AddTransient<INew<Comment>, CommentManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,10 +62,11 @@ namespace Project_n9ws
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name:"Default",
-                    pattern:"{Controller=News}/{action=Index}/{Id?}"
+                    name: "Default",
+                    pattern: "{Controller=News}/{action=Index}/{Id?}"
                     );
             });
         }
     }
 }
+

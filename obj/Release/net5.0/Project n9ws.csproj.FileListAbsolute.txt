@@ -1087,5 +1087,5 @@ C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\TeamMember.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\CommentsPartialView.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\AllComments.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\_CommentsPartialView.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\_DisplayAllCommentsPV.cshtml.g.cs

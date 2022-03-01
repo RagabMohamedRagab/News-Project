@@ -43,12 +43,9 @@
     </div>
 </section>
 
-<partial name="CommentsPartialView" />
+<partial name="_CommentsPartialView" model="@ViewBag.viewModel" />
 
-
-
-
-
+<partial name="_DisplayAllCommentsPV" model="@ViewBag.viewData"/>
 
 
 

@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Project_n9ws.ViewModel;
 
 namespace Project_n9ws.Controllers
 {
@@ -22,8 +23,9 @@ namespace Project_n9ws.Controllers
         readonly IWebHostEnvironment _webHost;
         readonly INew<Country> _Country;
         readonly SearchEmail _searchEmail;
-        
-        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INewsByID<New> newsByID1)
+        readonly INew<Comment> _comment;
+
+        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INewsByID<New> newsByID1, INew<Comment> comment)
         {
             _news = news;
             _contact = contact;
@@ -32,7 +34,7 @@ namespace Project_n9ws.Controllers
             _webHost = webHost;
             _Country = country;
             _searchEmail = searchEmail;
-            
+            _comment = comment;
         }
 
         [HttpGet] // News/Index
@@ -74,13 +76,17 @@ namespace Project_n9ws.Controllers
             return View(contactUs);
         }
         [HttpGet] // News/New/Id
-        public IActionResult New([FromRoute]int Id)
+        public IActionResult New([FromRoute] int Id)
         {
             if (Id == 0)
             {
                 return View("Error");
             }
+            ViewBag.viewModel = new UserCommentsViewModel();
+            ViewBag.viewData = _comment.GetAll().Result;
+            
             ViewBag.TypeNews = _news.Get(Id).Result.Name;
+            
             return View(_newsByID.GetAll(Id).Result);
         }
         // Start Register Form Action
@@ -131,14 +137,26 @@ namespace Project_n9ws.Controllers
             if (user.Email != null && user.Password != null)
             {
                 if (_searchEmail.SearchEmailORPassword(user.Email))
-                {
+                
                     return RedirectToAction(nameof(Index));
-                }
+                
             }
             return View("Error");
         }
         // End Login Form Action
-      
+        [HttpPost]
+        public IActionResult Comment([Bind("Comments")]UserCommentsViewModel userComments)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_comment.Create(userComments.Comments).Result > 0)
+                    ModelState.Clear();
+                    return View("_CommentsPartialView");
+            }
+            return View("_CommentsPartialView");
+        }
 
     }
 }
+
+

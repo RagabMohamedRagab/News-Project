@@ -16,6 +16,7 @@ namespace Project_n9ws.Models
             modelBuilder.Entity<User>().HasIndex(i => new { i.ID, i.FirstName, i.LastName, i.Password, i.Email });
             modelBuilder.Entity<Comment>().HasKey(PK => PK.Id);
             modelBuilder.Entity<Comment>().Property(text => text.Text).IsRequired().HasColumnType("nvarchar(350)");
+            modelBuilder.Entity<Comment>().Property(PK => PK.Id).ValueGeneratedOnAdd();
           
         }
 
