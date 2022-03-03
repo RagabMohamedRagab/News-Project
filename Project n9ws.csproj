@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <None Include="wwwroot\assest\News.jpg" />
     <None Include="wwwroot\assets\css\style.css" />
     <None Include="wwwroot\assets\css\util.css" />
@@ -136,10 +141,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\" />
     <Folder Include="wwwroot\Jquery\" />
   </ItemGroup>
 
