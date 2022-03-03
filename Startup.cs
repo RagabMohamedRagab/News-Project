@@ -61,6 +61,12 @@ namespace Project_n9ws
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
                 endpoints.MapControllerRoute(
                     name: "Default",
                     pattern: "{Controller=News}/{action=Index}/{Id?}"
@@ -69,4 +75,7 @@ namespace Project_n9ws
         }
     }
 }
+
+
+
 

@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<New>;
 @{
     ViewData["Title"] = "New";
-}
-@{
     Thread.CurrentThread.CurrentCulture = new CultureInfo("en-UK");
-
 }
+
 <section class="wrapper col-md-12">
     <div class="section-title ">
         <h2>@ViewBag.TypeNews</h2>
@@ -42,11 +40,11 @@
         }
     </div>
 </section>
+@*@TempData.Peek("DisplayComment");*@
+@*<partial name="_CommentsPartialView" model="new UserCommentsViewModel()" />*@
+@await Html.PartialAsync("_CommentsPartialView", new UserCommentsViewModel())
 
-<partial name="_CommentsPartialView" model="@ViewBag.viewModel" />
-
-<partial name="_DisplayAllCommentsPV" model="@ViewBag.viewData"/>
-
+@await Component.InvokeAsync("Comment",ViewBag.DisplayComment);
 
 
 

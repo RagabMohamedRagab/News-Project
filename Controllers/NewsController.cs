@@ -82,10 +82,9 @@ namespace Project_n9ws.Controllers
             {
                 return View("Error");
             }
-            ViewBag.viewModel = new UserCommentsViewModel();
-            ViewBag.viewData = _comment.GetAll().Result;
+            ViewBag.DisplayComment = _comment.GetAll().Result;
             
-            ViewBag.TypeNews = _news.Get(Id).Result.Name;
+            ViewBag.TypeNews= _news.Get(Id).Result.Name;
             
             return View(_newsByID.GetAll(Id).Result);
         }
@@ -144,17 +143,7 @@ namespace Project_n9ws.Controllers
             return View("Error");
         }
         // End Login Form Action
-        [HttpPost]
-        public IActionResult Comment([Bind("Comments")]UserCommentsViewModel userComments)
-        {
-            if (ModelState.IsValid)
-            {
-                if (_comment.Create(userComments.Comments).Result > 0)
-                    ModelState.Clear();
-                    return View("_CommentsPartialView");
-            }
-            return View("_CommentsPartialView");
-        }
+       
 
     }
 }
