@@ -1,4 +1,5 @@
-﻿@foreach (var item in ViewBag.DisplayComment)
+﻿@model IEnumerable<UserCommentsViewModel>;
+@foreach (var item in Model)
 {
     <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
         <div class="d-flex flex-start w-100">
@@ -7,7 +8,7 @@
                  alt="avatar"
                  width="40"
                  height="40" />
-            <p>@item.Text</p>
+            <p>@item.CommentUser;</p>
         </div>
     </div>
 

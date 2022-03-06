@@ -9,6 +9,7 @@ namespace Project_n9ws.Models
     public class NewsContextDb:DbContext
     {
         public NewsContextDb(DbContextOptions<NewsContextDb> options) : base(options) { }
+       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().Ignore(b =>  b.File);
@@ -17,7 +18,7 @@ namespace Project_n9ws.Models
             modelBuilder.Entity<Comment>().HasKey(PK => PK.Id);
             modelBuilder.Entity<Comment>().Property(text => text.Text).IsRequired().HasColumnType("nvarchar(350)");
             modelBuilder.Entity<Comment>().Property(PK => PK.Id).ValueGeneratedOnAdd();
-          
+            modelBuilder.Entity<Comment>().HasOne(u => u.Users).WithMany(comment => comment.Comments).HasForeignKey(comment => comment.UserId).OnDelete(DeleteBehavior.Cascade).HasConstraintName("Comment_UserID_User");
         }
 
         public virtual DbSet<New> News { get; set; }

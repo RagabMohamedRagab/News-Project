@@ -143,7 +143,23 @@ namespace Project_n9ws.Controllers
             return View("Error");
         }
         // End Login Form Action
-       
+        [HttpPost]
+        public IActionResult Comment(UserCommentsViewModel userComments)
+        {
+            if (userComments != null && ModelState.IsValid)
+            {
+                var comment = new Comment
+                {
+                    Text = userComments.CommentUser,
+                    UserId = _User.GetAll().Result.SingleOrDefault(b => b.FirstName == userComments.UserName).ID,
+                };
+                if (_comment.Create(comment).Result > 0)
+                {
+                    return View("_CommentsPartialView");
+                }
+            }
+            return View("Error");
+        }
 
     }
 }

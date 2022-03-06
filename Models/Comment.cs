@@ -11,5 +11,8 @@ namespace Project_n9ws.Models
         public int Id { get; set; }
         [Required(ErrorMessage ="Must be insert")]
         public string Text { get; set; }
+
+        public int? UserId { get; set; }
+        public virtual User Users { get; set; }
     }
 }

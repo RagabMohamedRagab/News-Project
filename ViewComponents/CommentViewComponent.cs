@@ -11,11 +11,21 @@ namespace Project_n9ws.ViewComponents
 {
     public class CommentViewComponent:ViewComponent
     {
-
-        public async Task<IViewComponentResult> InvokeAsync()
+        readonly NewsContextDb _NewsContextDb;
+        public CommentViewComponent(NewsContextDb NewsContextDb)
         {
- 
-            return View();
+            _NewsContextDb = NewsContextDb;
+        }
+        public  IViewComponentResult Invoke()
+        {
+            IQueryable<UserCommentsViewModel> userComments =
+                   _NewsContextDb.Comments
+                   .Select(comment =>new UserCommentsViewModel 
+                   {
+                       UserName = comment.Users.FirstName,
+                       CommentUser = comment.Text 
+                   });
+            return View(userComments);
         }
     }
 }

@@ -1085,10 +1085,8 @@ C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\ref\Project n
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.pdb
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.genruntimeconfig.cache
 C:\Users\pc\Desktop\New folder (7)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
-C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\TeamMember.cshtml.g.cs
 C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\_CommentsPartialView.cshtml.g.cs
-C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\News\_DisplayAllCommentsPV.cshtml.g.cs
 C:\Users\pc\Source\Repos\News-Project\obj\Release\net5.0\Project n9ws.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pc\Source\Repos\News-Project\obj\Release\net5.0\Project n9ws.AssemblyInfoInputs.cache
 C:\Users\pc\Source\Repos\News-Project\obj\Release\net5.0\Project n9ws.AssemblyInfo.cs
@@ -1249,3 +1247,7 @@ C:\Users\pc\Source\Repos\News-Project\obj\Release\net5.0\Project n9ws.csproj.Cop
 C:\Users\pc\Source\Repos\News-Project\obj\Release\net5.0\Project n9ws.genruntimeconfig.cache
 C:\Users\pc\Source\Repos\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache
 C:\Users\pc\Source\Repos\News-Project\obj\Release\net5.0\Razor\Views\Shared\Components\Comment\Default.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Razor\Views\Shared\Components\Comment\Default.cshtml.g.cs
+C:\Users\pc\Desktop\New folder (5)\News-Project\bin\Release\net5.0\Castle.Core.dll
+C:\Users\pc\Desktop\New folder (5)\News-Project\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\pc\Desktop\New folder (5)\News-Project\obj\Release\net5.0\Project n9ws.csprojAssemblyReference.cache

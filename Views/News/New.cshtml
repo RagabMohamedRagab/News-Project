@@ -34,8 +34,6 @@
 
                     </div>
                 </div>
-
-
             </div>
         }
     </div>
@@ -44,7 +42,7 @@
 @*<partial name="_CommentsPartialView" model="new UserCommentsViewModel()" />*@
 @await Html.PartialAsync("_CommentsPartialView", new UserCommentsViewModel())
 
-@await Component.InvokeAsync("Comment",ViewBag.DisplayComment);
+@Component.InvokeAsync("Comment");
 
 
 

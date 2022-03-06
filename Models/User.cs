@@ -32,6 +32,7 @@ namespace Project_n9ws.Models
         [Display(Name="Country"),ForeignKey(nameof(CountryId))]
         public Nullable<int> CountryId { get; set; }
         public virtual Country Country { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
    
 }

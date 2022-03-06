@@ -1,4 +1,5 @@
-﻿using Project_n9ws.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Project_n9ws.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,9 @@ namespace Project_n9ws.Data
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<User>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _contextDb.Users.ToListAsync();
         }
 
         public Task<int> Remove(User entity)

@@ -12,8 +12,8 @@ namespace Project_n9ws.ViewModel
         {
             this.Date = DateTime.Now;
         }
-        public  User Users { get; set; }
+        public  string UserName { get; set; }
         public DateTime Date { get; set; }
-        public Comment Comments { get; set; }
+        public string CommentUser { get; set; }
     }
 }

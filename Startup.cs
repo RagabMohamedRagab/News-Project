@@ -30,7 +30,7 @@ namespace Project_n9ws
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<NewsContextDb>(option => option.UseSqlServer(Configuration.GetConnectionString("MyFirstProject")));
+            services.AddDbContext<NewsContextDb>(option => option.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("MyFirstProject")));
             services.AddControllersWithViews();
             services.AddScoped<INew<Category>, CategoryManger>();
             services.AddScoped<INew<ContactUs>, ContactManager>();
