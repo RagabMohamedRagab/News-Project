@@ -33,6 +33,7 @@ namespace Project_n9ws.Data
 
         public async Task<IEnumerable<Comment>> GetAll()
         {
+            
             return await _context.Comments.ToListAsync();
         }
 

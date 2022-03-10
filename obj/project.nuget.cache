@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "No6rzpzod8mizmtkU1yRx845ErgZPpQRyf3DN1jlxeNsKTxWRjpYzMaPQGj+j6mEHVP/hjAa9WiAt2lpOXQldw==",
+  "dgSpecHash": "+Ga+9lf2F3jXXeG1CZwOdQPlBRnTa8q+fSW2CydBeY2r7VaNvrmomxUcP8I//QgRqphduCXxJRcrzMMIVm27Jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pc\\Desktop\\New folder (5)\\News-Project\\Project n9ws.csproj",
+  "projectFilePath": "C:\\Users\\pc\\Desktop\\New folder (15)\\Project n9ws.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

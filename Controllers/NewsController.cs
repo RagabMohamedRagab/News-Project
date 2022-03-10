@@ -151,11 +151,12 @@ namespace Project_n9ws.Controllers
                 var comment = new Comment
                 {
                     Text = userComments.CommentUser,
-                    UserId = _User.GetAll().Result.SingleOrDefault(b => b.FirstName == userComments.UserName).ID,
+                    UserId = _User.GetAll().Result.FirstOrDefault(user => user.FirstName == userComments.UserName).ID,
                 };
+                ModelState.Clear();
                 if (_comment.Create(comment).Result > 0)
                 {
-                    return View("_CommentsPartialView");
+                    return PartialView("_CommentsPartialView");
                 }
             }
             return View("Error");
