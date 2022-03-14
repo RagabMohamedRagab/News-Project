@@ -47,9 +47,6 @@ namespace Project_n9ws.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("NewID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(350)");
@@ -58,8 +55,6 @@ namespace Project_n9ws.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("NewID");
 
                     b.HasIndex("UserId");
 
@@ -211,17 +206,11 @@ namespace Project_n9ws.Migrations
 
             modelBuilder.Entity("Project_n9ws.Models.Comment", b =>
                 {
-                    b.HasOne("Project_n9ws.Models.New", "News")
-                        .WithMany("Comments")
-                        .HasForeignKey("NewID");
-
                     b.HasOne("Project_n9ws.Models.User", "Users")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
                         .HasConstraintName("Comment_UserID_User")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("News");
 
                     b.Navigation("Users");
                 });
@@ -252,11 +241,6 @@ namespace Project_n9ws.Migrations
             modelBuilder.Entity("Project_n9ws.Models.Country", b =>
                 {
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Project_n9ws.Models.New", b =>
-                {
-                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("Project_n9ws.Models.User", b =>

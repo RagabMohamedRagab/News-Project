@@ -10,8 +10,8 @@ using Project_n9ws.Models;
 namespace Project_n9ws.Migrations
 {
     [DbContext(typeof(NewsContextDb))]
-    [Migration("20220209000036_CreateTableUserAndRegister")]
-    partial class CreateTableUserAndRegister
+    [Migration("20220314155553_CreateDatabase")]
+    partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,6 +40,32 @@ namespace Project_n9ws.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("NewID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NewID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Project_n9ws.Models.ContactUs", b =>
@@ -79,7 +105,9 @@ namespace Project_n9ws.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("ID");
 
@@ -93,7 +121,7 @@ namespace Project_n9ws.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -154,31 +182,57 @@ namespace Project_n9ws.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("Password");
 
                     b.HasKey("ID");
 
                     b.HasIndex("CountryId");
 
+                    b.HasIndex("ID", "FirstName", "LastName", "Password", "Email");
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.Comment", b =>
+                {
+                    b.HasOne("Project_n9ws.Models.New", "News")
+                        .WithMany("Comments")
+                        .HasForeignKey("NewID");
+
+                    b.HasOne("Project_n9ws.Models.User", "Users")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("Comment_UserID_User")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("News");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Project_n9ws.Models.New", b =>
                 {
                     b.HasOne("Project_n9ws.Models.Category", "Category")
                         .WithMany("News")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
                 });
@@ -200,6 +254,16 @@ namespace Project_n9ws.Migrations
             modelBuilder.Entity("Project_n9ws.Models.Country", b =>
                 {
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.New", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.User", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

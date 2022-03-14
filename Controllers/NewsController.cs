@@ -135,7 +135,7 @@ namespace Project_n9ws.Controllers
         {
             if (user.Email != null && user.Password != null)
             {
-                if (_searchEmail.SearchEmailORPassword(user.Email))
+                if (!_searchEmail.SearchEmailORPassword(user.Email))
                 
                     return RedirectToAction(nameof(Index));
                 
@@ -148,15 +148,18 @@ namespace Project_n9ws.Controllers
         {
             if (userComments != null && ModelState.IsValid)
             {
+               
+
                 var comment = new Comment
                 {
                     Text = userComments.CommentUser,
                     UserId = _User.GetAll().Result.FirstOrDefault(user => user.FirstName == userComments.UserName).ID,
+                  
                 };
                 ModelState.Clear();
                 if (_comment.Create(comment).Result > 0)
                 {
-                    return PartialView("_CommentsPartialView");
+                    return RedirectToAction(nameof(Index));
                 }
             }
             return View("Error");

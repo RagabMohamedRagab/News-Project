@@ -10,8 +10,8 @@ using Project_n9ws.Models;
 namespace Project_n9ws.Migrations
 {
     [DbContext(typeof(NewsContextDb))]
-    [Migration("20220121181658_DelSomeThing")]
-    partial class DelSomeThing
+    [Migration("20220314211951_RemoveNewID")]
+    partial class RemoveNewID
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,32 @@ namespace Project_n9ws.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Project_n9ws.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("NewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NewId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("Project_n9ws.Models.ContactUs", b =>
                 {
                     b.Property<int>("ID")
@@ -50,6 +76,7 @@ namespace Project_n9ws.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Message")
@@ -70,6 +97,23 @@ namespace Project_n9ws.Migrations
                     b.ToTable("ContactUs");
                 });
 
+            modelBuilder.Entity("Project_n9ws.Models.Country", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Countries");
+                });
+
             modelBuilder.Entity("Project_n9ws.Models.New", b =>
                 {
                     b.Property<int>("Id")
@@ -77,7 +121,7 @@ namespace Project_n9ws.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -93,8 +137,7 @@ namespace Project_n9ws.Migrations
 
                     b.Property<string>("Topic")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -128,20 +171,97 @@ namespace Project_n9ws.Migrations
                     b.ToTable("Teams");
                 });
 
+            modelBuilder.Entity("Project_n9ws.Models.User", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("Password");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("ID", "FirstName", "LastName", "Password", "Email");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.Comment", b =>
+                {
+                    b.HasOne("Project_n9ws.Models.New", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("NewId");
+
+                    b.HasOne("Project_n9ws.Models.User", "Users")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("Comment_UserID_User")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Users");
+                });
+
             modelBuilder.Entity("Project_n9ws.Models.New", b =>
                 {
                     b.HasOne("Project_n9ws.Models.Category", "Category")
                         .WithMany("News")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.User", b =>
+                {
+                    b.HasOne("Project_n9ws.Models.Country", "Country")
+                        .WithMany("User")
+                        .HasForeignKey("CountryId");
+
+                    b.Navigation("Country");
                 });
 
             modelBuilder.Entity("Project_n9ws.Models.Category", b =>
                 {
                     b.Navigation("News");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.Country", b =>
+                {
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.New", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("Project_n9ws.Models.User", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

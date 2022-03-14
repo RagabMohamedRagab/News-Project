@@ -16,7 +16,7 @@ namespace Project_n9ws.ViewComponents
         {
             _NewsContextDb = NewsContextDb;
         }
-        public  IViewComponentResult Invoke()
+        public IViewComponentResult Invoke()
         {
             IQueryable<UserCommentsViewModel> userComments =
                    _NewsContextDb.Comments

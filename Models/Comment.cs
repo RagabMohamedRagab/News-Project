@@ -9,14 +9,13 @@ namespace Project_n9ws.Models
 {
     public class Comment
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required(ErrorMessage ="Must be insert")]
         public string Text { get; set; }
-
+        [ForeignKey(nameof(UserId))]
         public int? UserId { get; set; }
         public virtual User Users { get; set; }
-        [ForeignKey(nameof(NewID))]
-        public int? NewID { get; set; }
-        public virtual New News { get; set; }
     }
 }

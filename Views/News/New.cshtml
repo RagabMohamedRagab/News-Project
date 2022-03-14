@@ -41,7 +41,7 @@
 @*@TempData.Peek("DisplayComment");*@
 @*<partial name="_CommentsPartialView" model="new UserCommentsViewModel()" />*@
 @await Html.PartialAsync("_CommentsPartialView", new UserCommentsViewModel())
-@Component.InvokeAsync("Comment");
+@await Component.InvokeAsync("Comment");
 
 
 

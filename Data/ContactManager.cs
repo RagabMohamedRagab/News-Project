@@ -16,10 +16,11 @@ namespace Project_n9ws.Data
             _context = context;
         }
 
-        public Task<int> Create(ContactUs entity)
+        public async Task<int> Create(ContactUs contactUs)
         {
-            throw new NotImplementedException();
-        }
+            await _context.ContactUs.AddAsync(contactUs);
+            return await _context.SaveChangesAsync();
+         }
 
         public Task<int> Edit(ContactUs OldEntity, ContactUs NewEntity)
         {
