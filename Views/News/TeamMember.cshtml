@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Team>;
 @{
-    ViewData["Title"] = "TeamMember";
+    ViewData["Title"] = "Team";
 }
 <!-- ======= TeamMember Section ======= -->
 <section id="services" class="services">
@@ -9,22 +9,27 @@
         <div class="section-title">
             <h2>TeamMember</h2>
         </div>
-        <div class="row">
-            @if (Model.Count() > 0)
-            {
+        @if (Model.Count() > 0)
+        {
+            <div class="row">
+
                 @foreach (var item in Model)
                 {
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon">@item.Image</div>
-                            <h4><a href="">@item.Name</a></h4>
-                            <p>@item.JopTitle</p>
+
+                    <div class="col-md-3"style="cursor:pointer;background:#f7f7f7;padding:2%">
+                        <div class="thumbnail">
+                            <img src="~/assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="Lights" style="width:100%">
+                            <div class="caption text-center" style="background: #0268be">
+                                <p style="font-size: large;color: #fff;line-height: 3rem">@item.Name</p>
+                                <p style="color: #fff;">@item.JopTitle</p>
+
+                            </div>
+
                         </div>
                     </div>
-
                 }
-            }
-        </div>
-
+            </div>
+        }
     </div>
 </section><!-- End Services Section -->
+

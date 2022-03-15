@@ -40,6 +40,7 @@ namespace Project_n9ws
             services.AddScoped<SearchEmail>();
             services.AddTransient<INewsByID<New>, NewManager>();
             services.AddTransient<INew<Comment>, CommentManager>();
+            services.AddTransient<INew<Team>, TeamManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

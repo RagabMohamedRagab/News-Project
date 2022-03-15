@@ -24,8 +24,9 @@ namespace Project_n9ws.Controllers
         readonly INew<Country> _Country;
         readonly SearchEmail _searchEmail;
         readonly INew<Comment> _comment;
+        readonly INew<Team> _Team;
 
-        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INewsByID<New> newsByID1, INew<Comment> comment)
+        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INewsByID<New> newsByID1, INew<Comment> comment, INew<Team> team)
         {
             _news = news;
             _contact = contact;
@@ -35,6 +36,7 @@ namespace Project_n9ws.Controllers
             _Country = country;
             _searchEmail = searchEmail;
             _comment = comment;
+            _Team = team;
         }
 
         [HttpGet] // News/Index
@@ -50,7 +52,8 @@ namespace Project_n9ws.Controllers
         [HttpGet]
         public IActionResult TeamMember()
         {
-            return View();
+
+            return View(_Team.GetAll().Result);
         }
         [HttpGet] // Get : News/ContactMess
         public IActionResult ContactMess()
