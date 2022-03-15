@@ -875,3 +875,9 @@ input.qty1::placeholder {
     width: 20px;
     background: transparent;
 }
+.down:hover {
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
+}
