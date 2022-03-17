@@ -41,6 +41,8 @@ namespace Project_n9ws
             services.AddTransient<INewsByID<New>, NewManager>();
             services.AddTransient<INew<Comment>, CommentManager>();
             services.AddTransient<INew<Team>, TeamManager>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +62,7 @@ namespace Project_n9ws
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
 

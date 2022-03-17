@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
 using Project_n9ws.Data;
 using Project_n9ws.Models;
 using Project_n9ws.Services;
@@ -120,9 +121,11 @@ namespace Project_n9ws.Controllers
             if (ModelState.IsValid)
             {
                 if (_User.Create(user).Result > 0)
+                     HttpContext.Session.SetString("UserID", (user.ID).ToString());
                     return RedirectToAction(nameof(Index));
 
             }
+           
             return View();
         }
         // End Register Form Action
@@ -138,7 +141,7 @@ namespace Project_n9ws.Controllers
         {
             if (user.Email != null && user.Password != null)
             {
-                if (!_searchEmail.SearchEmailORPassword(user.Email))
+                if (!_searchEmail.SearchEmailORPassword(user.Email,user.Password))
                 
                     return RedirectToAction(nameof(Index));
                 
@@ -166,6 +169,11 @@ namespace Project_n9ws.Controllers
                 }
             }
             return View("Error");
+        }
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            return RedirectToAction(nameof(Register));
         }
 
     }

@@ -15,11 +15,14 @@ namespace Project_n9ws.Services
             _contextDb = contextDb;
         }
         // SearchEmail
-        public  bool SearchEmailORPassword(string Email)
+        public bool SearchEmailORPassword(string Email, string Password)
         {
 
-            return _contextDb.Users.SingleOrDefault(em => em.Email == Email) == null;
+            return _contextDb.Users.SingleOrDefault(em => em.Email == Email && em.Password == Password) == null;
         }
 
     }
 }
+
+
+
