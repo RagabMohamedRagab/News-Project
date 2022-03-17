@@ -22,7 +22,7 @@ namespace Project_n9ws.ViewComponents
                    _NewsContextDb.Comments
                    .Select(comment =>new UserCommentsViewModel 
                    {
-                       UserName = comment.Users.FirstName,
+                      
                        CommentUser = comment.Text 
                    });
             return View(userComments);

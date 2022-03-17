@@ -19,7 +19,7 @@
                                 <div class="w-100">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <h6 class="text-primary fw-bold mb-0">
-                                            @comment.UserName
+                                            @HttpContextAccessor.HttpContext.Session.GetString("UserName")
                                             <span class="text-dark ms-2">@comment.CommentUser</span>
                                         </h6>
                                         <p class="mb-0">@comment.Date</p>

@@ -122,6 +122,7 @@ namespace Project_n9ws.Controllers
             {
                 if (_User.Create(user).Result > 0)
                      HttpContext.Session.SetString("UserID", (user.ID).ToString());
+                HttpContext.Session.SetString("UserName", user.FirstName);
                     return RedirectToAction(nameof(Index));
 
             }
@@ -159,7 +160,7 @@ namespace Project_n9ws.Controllers
                 var comment = new Comment
                 {
                     Text = userComments.CommentUser,
-                    UserId = _User.GetAll().Result.FirstOrDefault(user => user.FirstName == userComments.UserName).ID,
+                    UserId = _User.GetAll().Result.FirstOrDefault(user => user.FirstName == HttpContext.Session.GetString("UserName")).ID,
                   
                 };
                 ModelState.Clear();
