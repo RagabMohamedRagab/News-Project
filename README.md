@@ -66,6 +66,8 @@
     ?</a></li>
     <li><a href=" title="">Completing Comment Creation.
     ?</a></li>
+   <li>How to Remove Comment</li>
+  <li>Complete Switch between Rigster and Login With Log Out Without Identity </li>
  
  
  </ul>
