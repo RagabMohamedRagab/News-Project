@@ -122,8 +122,9 @@ namespace Project_n9ws.Controllers
             if (ModelState.IsValid)
             {
                 if (_User.Create(user).Result > 0)
-                    HttpContext.Session.SetString("UserID", (user.ID).ToString());
+                HttpContext.Session.SetString("UserID", (user.ID).ToString());
                 HttpContext.Session.SetString("UserName", user.FirstName);
+                HttpContext.Session.SetString("Image", user.Image);
                 return RedirectToAction(nameof(Index));
 
             }
