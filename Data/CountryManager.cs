@@ -36,7 +36,7 @@ namespace Project_n9ws.Data
 
         }
 
-        public Task<int> Remove(Country entity)
+        public Task<int> Delete(Country entity)
         {
             throw new NotImplementedException();
         }

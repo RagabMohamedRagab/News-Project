@@ -34,7 +34,7 @@ namespace Project_n9ws.Data
            return await _NewsContextDb.Teams.ToListAsync();
         }
 
-        public Task<int> Remove(Team entity)
+        public Task<int> Delete(Team entity)
         {
             throw new NotImplementedException();
         }

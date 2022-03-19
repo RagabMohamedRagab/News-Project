@@ -11,9 +11,10 @@ namespace Project_n9ws.ViewModel
         public UserCommentsViewModel()
         {
             this.Date = DateTime.Now;
-           
+            ID++;
         }
-       
+        public int ID { get; set; } = 0;
+
         public DateTime Date { get; set; }
         public string CommentUser { get; set; }
     }

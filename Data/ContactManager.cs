@@ -39,7 +39,7 @@ namespace Project_n9ws.Data
 
         
 
-        public Task<int> Remove(ContactUs entity)
+        public Task<int> Delete(ContactUs entity)
         {
             throw new NotImplementedException();
         }

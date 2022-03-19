@@ -37,7 +37,7 @@ namespace Project_n9ws.Data
             return await _contextDb.Users.ToListAsync();
         }
 
-        public Task<int> Remove(User entity)
+        public Task<int> Delete(User entity)
         {
             throw new NotImplementedException();
         }

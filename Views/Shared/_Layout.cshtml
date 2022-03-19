@@ -31,6 +31,8 @@
     <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  
 
     <!-- Template Main CSS File -->
     <link href="~/assets/css/style.css" rel="stylesheet">
@@ -70,7 +72,7 @@
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-            @if (HttpContextAccessor.HttpContext.Session.GetString("UserID") != null)
+            @if (HttpContextAccessor.HttpContext.Session.GetString("UserID") != null || HttpContextAccessor.HttpContext.Session.GetString("Email") != null)
             {
                 <a asp-area="" asp-controller="News" asp-action="Logout" class="appointment-btn scrollto">LogOut</a>
             }
@@ -155,6 +157,7 @@
     <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/bootstrap/js/bootstrap.js"></script>
     <script src="~/assets/js/main.js"></script>
+   
     <script src="~/assets/js/myscript.js"></script>
     @if (IsSectionDefined("Script"))
     {

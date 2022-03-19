@@ -11,7 +11,7 @@ namespace Project_n9ws.Data
         // Add
         Task<int> Create(T entity);
         // remove 
-        Task<int> Remove(T entity);
+        Task<int> Delete(T entity);
         // Update
         Task<int> Edit(T OldEntity, T NewEntity);
         Task<T> Get(int ID);

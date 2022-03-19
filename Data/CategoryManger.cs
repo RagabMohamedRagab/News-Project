@@ -48,7 +48,7 @@ namespace Project_n9ws.Data
             return await _NewsContextDb.Categories.ToListAsync();
         }
 
-        public async Task<int> Remove(Category category)
+        public async Task<int> Delete(Category category)
         {
             _NewsContextDb.Categories.Remove(category);
             return await _NewsContextDb.SaveChangesAsync();

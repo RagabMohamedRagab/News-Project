@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <p class="small mb-0" style="color: #aaa;">
-                                            <a href="#!" class="link-grey">Remove</a> •
+                                            <a asp-area="" asp-controller="News" asp-action="DelComment" asp-route-Id="@HttpContextAccessor.HttpContext.Session.GetString("ID_Comment")" class="link-grey">Remove</a> •
                                         </p>
                                         <div class="d-flex flex-row">
                                             <i class="fas fa-star text-warning me-2"></i>

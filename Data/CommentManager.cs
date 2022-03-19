@@ -26,9 +26,9 @@ namespace Project_n9ws.Data
             throw new NotImplementedException();
         }
 
-        public Task<Comment> Get(int ID)
+        public async Task<Comment> Get(int ID)
         {
-            throw new NotImplementedException();
+            return await _context.Comments.FindAsync(ID); 
         }
 
         public async Task<IEnumerable<Comment>> GetAll()
@@ -37,9 +37,10 @@ namespace Project_n9ws.Data
             return await _context.Comments.ToListAsync();
         }
 
-        public Task<int> Remove(Comment entity)
+        public async Task<int> Delete(Comment comment)
         {
-            throw new NotImplementedException();
+            _context.Comments.Remove(comment);
+            return await _context.SaveChangesAsync();
         }
     }
 }

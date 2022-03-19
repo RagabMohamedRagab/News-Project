@@ -86,10 +86,11 @@ namespace Project_n9ws.Controllers
             {
                 return View("Error");
             }
+            HttpContext.Session.SetString("Route-ID", Id.ToString());
             ViewBag.DisplayComment = _comment.GetAll().Result;
-            
-            ViewBag.TypeNews= _news.Get(Id).Result.Name;
-            
+
+            ViewBag.TypeNews = _news.Get(Id).Result.Name;
+
             return View(_newsByID.GetAll(Id).Result);
         }
         // Start Register Form Action
@@ -121,12 +122,12 @@ namespace Project_n9ws.Controllers
             if (ModelState.IsValid)
             {
                 if (_User.Create(user).Result > 0)
-                     HttpContext.Session.SetString("UserID", (user.ID).ToString());
+                    HttpContext.Session.SetString("UserID", (user.ID).ToString());
                 HttpContext.Session.SetString("UserName", user.FirstName);
-                    return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
 
             }
-           
+
             return View();
         }
         // End Register Form Action
@@ -140,12 +141,15 @@ namespace Project_n9ws.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Login([Bind("Email", "Password")] User user)
         {
+
             if (user.Email != null && user.Password != null)
             {
-                if (!_searchEmail.SearchEmailORPassword(user.Email,user.Password))
-                
+                HttpContext.Session.SetString("Email", (user.Email).ToString());
+                HttpContext.Session.SetString("UserName", _User.GetAll().Result.SingleOrDefault(userId => userId.Email == user.Email).FirstName);
+                if (!_searchEmail.SearchEmailORPassword(user.Email, user.Password))
+
                     return RedirectToAction(nameof(Index));
-                
+
             }
             return View("Error");
         }
@@ -153,21 +157,30 @@ namespace Project_n9ws.Controllers
         [HttpPost]
         public IActionResult Comment(UserCommentsViewModel userComments)
         {
-            if (userComments != null && ModelState.IsValid)
+            if (userComments.CommentUser != null)
             {
-               
+                if (HttpContext.Session.GetString("UserName") != null)
+                {
 
-                var comment = new Comment
-                {
-                    Text = userComments.CommentUser,
-                    UserId = _User.GetAll().Result.FirstOrDefault(user => user.FirstName == HttpContext.Session.GetString("UserName")).ID,
-                  
-                };
-                ModelState.Clear();
-                if (_comment.Create(comment).Result > 0)
-                {
-                    return RedirectToAction(nameof(Index));
+                    var comment = new Comment
+                    {
+                        Text = userComments.CommentUser,
+                        UserId = _User.GetAll().Result.FirstOrDefault(user => user.FirstName == HttpContext.Session.GetString("UserName")).ID,
+
+                    };
+
+                    ModelState.Clear();
+                    if (_comment.Create(comment).Result > 0)
+                    {
+                        HttpContext.Session.SetString("ID_Comment", comment.Id.ToString());
+                        return RedirectToAction(nameof(New), "News", new { Id = HttpContext.Session.GetString("Route-ID") }); ;
+                    }
                 }
+                else
+                {
+                    return RedirectToAction(nameof(Register));
+                }
+
             }
             return View("Error");
         }
@@ -176,6 +189,37 @@ namespace Project_n9ws.Controllers
         {
             return RedirectToAction(nameof(Register));
         }
+
+
+        [HttpGet]
+        public IActionResult DelComment(int Id)
+        {
+            if (Id != 0)
+            {
+                if (_comment.Delete(_comment.Get(Id).Result).Result > 0)
+                {
+                    return RedirectToAction(nameof(New), "News", new { Id = HttpContext.Session.GetString("Route-ID") });
+                }
+            }
+            return RedirectToAction(nameof(New), "News", new { Id = HttpContext.Session.GetString("Route-ID") });
+        }
+      
+      [HttpPost]
+        public IActionResult ForgetPW(string Email)
+        {
+            if (!String.IsNullOrEmpty(Email))
+            {
+                User user = _User.GetAll().Result.SingleOrDefault(user => user.Email == Email);
+                if (user != null)
+                {
+
+                }
+            }
+            return View(nameof(Index));
+        }
+
+
+
 
     }
 }
