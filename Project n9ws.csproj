@@ -6,6 +6,10 @@
     <UserSecretsId>afd34e39-aeda-40fe-9d4c-d5d64e8a8e02</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Areas\**" />
     <Compile Remove="Extentions\**" />

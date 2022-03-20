@@ -1,5 +1,5 @@
 ﻿@model ContactUs;
-@{ 
+@{
     ViewData["Title"] = "Contact";
 }
 <!-- ======= Contact Section ======= -->
@@ -60,21 +60,21 @@
                             <span asp-validation-for="Name" class="valid"></span>
                         </div>
                         <div class="col form-group Modified">
-                            <input asp-for="Email" class="form-control" placeholder="Your Email" >
+                            <input asp-for="Email" class="form-control" placeholder="Your Email">
                             <span asp-validation-for="Email" class="valid"></span>
                         </div>
                     </div>
                     <div class="form-group mt-3 Modified">
-                        <input asp-for="Subject" class="form-control" placeholder="Subject" >
+                        <input asp-for="Subject" class="form-control" placeholder="Subject">
                         <span asp-validation-for="Subject" class="valid"></span>
                     </div>
                     <div class="form-group mt-3 Modified">
-                        <textarea asp-for="Message" class="form-control" rows="5" placeholder="Message" ></textarea>
+                        <textarea asp-for="Message" class="form-control" rows="5" placeholder="Message"></textarea>
                         <span asp-validation-for="Message" class="valid"></span>
                     </div>
-                   <div class="d-flex justify-content-center">
-                       <input type="submit" class="btn btn-primary my-4 "/>
-                   </div>
+                    <div class="d-flex justify-content-center">
+                        <input type="submit" class="btn btn-primary my-4 " />
+                    </div>
                 </form>
             </div>
 
@@ -84,7 +84,7 @@
 </section><!-- End Contact Section -->
 
 @section Script{
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <partial name="_ValidationScriptsPartial" />
 }
 
 

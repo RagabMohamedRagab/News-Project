@@ -26,14 +26,14 @@
             </div>
             <div class="form-row">
                 <label asp-for="Email"></label>
-                <input asp-for="Email" class="input-text" placeholder="Your Email" >
+                <input asp-for="Email" class="input-text" placeholder="Your Email">
                 <i class="fas fa-envelope"></i>
                 <span asp-validation-for="Email" class="Vald"> </span>
 
             </div>
             <div class="form-row">
                 <label asp-for="Password"></label>
-                <input type="password"  asp-for="Password" class="input-text" placeholder="Your Password">
+                <input type="password" asp-for="Password" class="input-text" placeholder="Your Password">
                 <i class="fas fa-lock"></i>
                 <span asp-validation-for="Password" class="Vald"> </span>
             </div>
@@ -41,7 +41,7 @@
                 <label asp-for="CountryId"></label>
                 <select asp-for="CountryId" asp-items="@ViewBag.Countries" class="select-text" name="country">
                     <option selected style="font-weight:bold">Select Country</option>
-                   
+
                 </select>
                 <i class="fas fa-home"></i>
                 <span asp-validation-for="CountryId" class="Vald"> </span>
@@ -56,15 +56,15 @@
             <div class="form-row-last">
                 <input type="submit" name="register" class="register" value="Register">
             </div>
-           
-                <div class="form-row-last">
-                    <a class="btn btn-primary display-3 haveAccount" asp-area="" asp-controller="News" asp-action="Login">Are you have account</a>
-                </div>
-            
+
+            <div class="form-row-last">
+                <a class="btn btn-primary display-3 haveAccount" asp-area="" asp-controller="News" asp-action="Login">Are you have account</a>
+            </div>
+
         </form>
     </div>
 </div>
 
 @section Script{
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <partial name="_ValidationScriptsPartial" />
 }

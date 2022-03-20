@@ -27,7 +27,7 @@ namespace Project_n9ws.Controllers
         readonly INew<Comment> _comment;
         readonly INew<Team> _Team;
 
-        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INewsByID<New> newsByID1, INew<Comment> comment, INew<Team> team)
+        public NewsController(INew<Category> news, INew<ContactUs> contact, INewsByID<New> newsByID, INew<User> user, IWebHostEnvironment webHost, INew<Country> country, SearchEmail searchEmail, INew<Comment> comment, INew<Team> team)
         {
             _news = news;
             _contact = contact;
@@ -148,7 +148,6 @@ namespace Project_n9ws.Controllers
                 HttpContext.Session.SetString("Email", (user.Email).ToString());
                 HttpContext.Session.SetString("UserName", _User.GetAll().Result.SingleOrDefault(userId => userId.Email == user.Email).FirstName);
                 if (!_searchEmail.SearchEmailORPassword(user.Email, user.Password))
-
                     return RedirectToAction(nameof(Index));
 
             }
@@ -205,18 +204,18 @@ namespace Project_n9ws.Controllers
             return RedirectToAction(nameof(New), "News", new { Id = HttpContext.Session.GetString("Route-ID") });
         }
       
-      [HttpPost]
+     [HttpGet]
         public IActionResult ForgetPW(string Email)
         {
             if (!String.IsNullOrEmpty(Email))
             {
-                User user = _User.GetAll().Result.SingleOrDefault(user => user.Email == Email);
+                var user = _User.GetAll().Result.SingleOrDefault(user => user.Email == Email);
                 if (user != null)
                 {
-
+                    HttpContext.Session.SetString("Password", user.Password);   
                 }
             }
-            return View(nameof(Index));
+            return View(nameof(Login));
         }
 
 
