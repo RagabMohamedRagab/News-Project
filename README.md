@@ -68,6 +68,7 @@
     ?</a></li>
    <li>How to Remove Comment</li>
   <li>Complete Switch between Rigster and Login With Log Out Without Identity </li>
+   <li>Completed Forget Password by Used Simple Way </li>
  
  
  </ul>
