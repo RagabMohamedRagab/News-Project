@@ -28,5 +28,6 @@ namespace Project_n9ws.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
     }
 }

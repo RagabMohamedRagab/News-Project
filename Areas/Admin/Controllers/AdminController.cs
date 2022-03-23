@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Project_n9ws.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class AdminController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Dasboard()
         {
             return View();
         }

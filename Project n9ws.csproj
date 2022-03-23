@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Admin\Dasboard.cshtml" />
     <None Include="wwwroot\assest\News.jpg" />
     <None Include="wwwroot\assets\css\style.css" />
     <None Include="wwwroot\assets\css\util.css" />
@@ -146,8 +146,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="wwwroot\Jquery\" />
   </ItemGroup>
 

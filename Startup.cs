@@ -66,15 +66,17 @@ namespace Project_n9ws
             app.UseEndpoints(endpoints =>
             {
 
-                endpoints.MapControllerRoute(
-                  name: "areas",
-                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                );
+            endpoints.MapControllerRoute(
+             name: "Admin",
+             pattern: "{area:exists}/{controller=Admin}/{action=Dasboard}/{id?}"
+ );
 
                 endpoints.MapControllerRoute(
-                    name: "Default",
-                    pattern: "{Controller=News}/{action=Index}/{Id?}"
-                    );
+                       name: "Default",
+                       pattern: "{Controller=News}/{action=Index}/{Id?}"
+                       );
+               
+             
             });
         }
     }
